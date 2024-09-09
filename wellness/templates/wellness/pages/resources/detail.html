@@ -1,0 +1,38 @@
+{% extends 'wellness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Resource | Detail | Wellness</title>
+{% endblock title%}
+
+{% block content %}
+<section class="single-post-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 post-content" data-aos="fade-up">
+        <div class="single-post">
+          <div class="post-meta">
+            <span class="date">{{resource.get_category_display}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{resource.series_title}}</span>
+          </div>
+          <h1 class="mb-5">{{resource.title}}</h1>
+          <figure class="my-4">
+            <img src="{% static 'assets/images/resource/' %}{{resource.art_uri}}.jpg" alt="{{resource.art_alt}}" class="img-fluid">
+            <figcaption>{{resource.art_caption}}</figcaption>
+          </figure>
+          <div class="mb-5"></div>
+          <p class="description">{{resource.description}}</p>
+          <div class="d-grid gap-2 col-8 mx-auto mt-2">
+            <a class="location btn btn-primary" href="{{resource.venue.url | safe}}" target="_blank">Visit website</a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-3">
+      </div> -->
+    </div>
+    <div style="margin-bottom: 150px;"></div>
+  </div>
+</section>
+{% endblock content%}

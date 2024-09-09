@@ -1,0 +1,46 @@
+{% extends 'wellness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Event | Detail | Wellness</title>
+{% endblock title%}
+
+{% block content %}
+<section class="single-post-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 post-content" data-aos="fade-up">
+        <div class="single-post">
+          <div class="post-meta">
+            <span class="date">{{ event.get_category_display }}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{ event.series_title }}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{ event.date | date:"D, M d" }}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{ event.time | date:"g:i A" }}</span>
+          </div>
+          <h1 class="mb-5">{{ event.title }}</h1>
+          <figure class="my-4">
+            <img src="{% static 'assets/images/event/' %}{{ event.art_uri }}.jpg" alt="{{ event.art_alt }}" class="img-fluid">
+            <figcaption>{{ event.art_caption }}</figcaption>
+          </figure>
+          <div class="mb-5"></div>
+          <p class="description">{{ event.description }}</p>
+          <p class="datetime">This event will take place on {{ event.date | date:"l, F d" }} at {{ event.time | date:"g:i A" }}</p>
+
+          {% if event.venue %}
+          <p class="venue"><strong>Venue:</strong> {{ event.venue.name }} - <a href="{{ event.venue.url }}" target="_blank">{{ event.venue.get_type_display }}</a></p>
+          {% endif %}
+
+          <div class="d-grid gap-2 col-8 mx-auto mt-2">
+            <a class="location btn btn-primary" href="{{ event.calendar_url | safe }}" target="_blank">Check your calendar for meeting information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom: 150px;"></div>
+  </div>
+</section>
+{% endblock content %}

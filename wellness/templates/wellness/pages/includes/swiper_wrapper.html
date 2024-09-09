@@ -1,0 +1,19 @@
+<div style="text-align: center;" class="swiper-wrapper">
+  {% for announcement in announcements %}
+  <div class="swiper-slide">
+    <div class="img-bg-inner">
+      <h2>{{announcement.title}}</h2>
+      <p>{{announcement.text}}</p>
+    </div>
+  </div>
+
+
+  {% empty %}
+  <div class="swiper-slide">
+    <div class="img-bg-inner">
+      <h2 >Wellness Program</h2>
+      <p>There are no announcements at the moment.</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>

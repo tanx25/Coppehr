@@ -1,0 +1,106 @@
+{% extends 'wellness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Support | Events | Wellness</title>
+{% endblock title %}
+
+{% block content %}
+<section id="hero-slider" class="hero-slider">
+  <div class="container-md" data-aos="fade-in">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="swiper sliderFeaturedPosts">
+          {% include 'wellness/pages/includes/swiper_wrapper.html' with announcements=announcements %}
+          <div style="margin-top: 50px;"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header d-flex justify-content-between align-items-center mb-5">
+      <h2>Support</h2>
+      <div><a href="{% url 'wellness:support-resources' %}" class="more">Resources</a></div>
+    </div>
+    <div class="row">
+      <div class="col-md-9" data-aos="fade-up">
+        <h2>Events</h2>
+        {% for e in support_e %}
+        <div class="d-md-flex post-entry-2 half">
+          <a class="me-4 thumbnail">
+            <img src="{% static 'assets/images/event/' %}{{e.art_uri}}.jpg" alt="{{e.art_alt}}" class="img-fluid">
+          </a>
+          <div class="content">
+            <div class="post-meta">
+              <span class="date">{{e.get_category_display}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{e.series_title}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{e.date | date:"M d"}}</span>
+            </div>
+            <h3><a>{{e.title}}</a></h3>
+            <p>{{e.description | truncatewords:44}}</p>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+          </div>
+        </div>
+        {% empty %}
+        <h3>Sorry, no events are scheduled in this category as of today.</h3>
+        {% endfor %}
+        {% if support_e.paginator.num_pages > 1 %}
+        <div class="text-start py-4">
+          <div class="custom-pagination">
+            {% if support_e.has_previous %}
+            <a href="?page={{support_e.previous_page_number}}" class="prev">Previous</a>
+            {% else %}
+            <a class="not-active">Previous</a>
+            {% endif %}
+            {% for e in support_e.paginator.page_range %}
+            <a href="?page={{forloop.counter}}" {% if support_e.number == forloop.counter %} class="active" {% endif %}>{{forloop.counter}}</a>
+            {% endfor %}
+            {% if support_e.has_next %}
+            <a href="?page={{support_e.next_page_number}}" class="next">Next</a>
+            {% else %}
+            <a class="not-active">Next</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-3">
+        <div class="aside-block">
+          <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button disabled class="nav-link active" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Upcoming Events</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
+              {% for e in upcoming_e %}
+              <div class="post-entry-1 border-bottom">
+                <div class="post-meta">
+                  <span class="date">{{e.get_category_display}}</span>
+                  <span class="mx-1">&bullet;</span>
+                  <span>{{e.series_title}}</span>
+                  <span class="mx-1">&bullet;</span>
+                  <span>{{e.date | date:"M d"}}</span>
+                </div>
+                <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
+                <p>{{e.description | truncatewords:44}}</p>
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

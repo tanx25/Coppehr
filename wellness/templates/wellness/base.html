@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}<title>Wellness - Your Path to Well-being</title>{% endblock title %}
+  <meta content="Promote wellness and connect with the community." name="description">
+  <meta content="wellness, health, community, friendship, support" name="keywords">
+  <!-- Favicons -->
+  <link href="{% static 'assets/images/site/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/images/site/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <style>
+  </style>
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <!-- Logo -->
+      <a href="{% url 'wellness:home' %}" class="logo d-flex align-items-center">
+        <h1>Wellness</h1>
+      </a>
+      <!-- Navbar -->
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="{% url 'wellness:health-events' %}">Health</a></li>
+                <li><a href="{% url 'wellness:friendship-events' %}">Friendship</a></li>
+                <li><a href="{% url 'wellness:support-events' %}">Support</a></li>
+
+
+                <li class="mobile"><a href="{% url 'wellness:calendar' %}">Calendars</a></li>
+                <li class="mobile"><a href="{% url 'wellness:about' %}">About</a></li>
+                <li class="mobile"><a href="{% url 'wellness:logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        <!-- My Items Button -->
+      <button id="myItemsButton" class="menu-button">MY ITEMS</button>
+
+
+
+
+<!-- Mobile Nav Toggle -->
+<div class="mobile-nav">
+    <i class="bi bi-list mobile-nav-toggle"></i>
+</div>
+
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Main Content -->
+  <main id="main">
+    {% block content %}
+    {% endblock content %}
+  </main>
+  <!-- End Main Content -->
+
+  <!-- My Items Sliding Panel -->
+  <div id="myItemsPanel" class="menu-panel">
+    <button id="closeMenuButton" class="close-button">&times;</button>
+    <div class="menu-content">
+{#        <a href="{% url 'wellness:health-events' %}">Health</a>#}
+{#        <a href="{% url 'wellness:friendship-events' %}">Friendship</a>#}
+{#        <a href="{% url 'wellness:support-events' %}">Support</a>#}
+        <a href="{% url 'wellness:calendar' %}">Calendars</a>
+        <a href="{% url 'wellness:about' %}">About</a>
+        <a href="{% url 'wellness:logout' %}">Logout</a>
+    </div>
+  </div>
+  <div id="menuOverlay" class="menu-overlay"></div>
+  <!-- End My Items Sliding Panel -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-content">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-6">
+            <h3 class="footer-heading">About Wellness</h3>
+            <p>The Wellness Program's mission is to promote wellness for the Center on Aging's patients. Inspired by those around him, Dr. Ron Adelman conceptualized a platform where patients could feel less isolated by making social connections with one another and providers. By offering educational programs on food and nutrition, exercise, cultural enrichment, and more, we hope participants will meet new people, make new friends, and learn new things.</p>
+            <p><a href="{% url 'wellness:about' %}" class="footer-link-more">Learn More</a></p>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="{% url 'wellness:home' %}"><i class="bi bi-chevron-right"></i> Home</a></li>
+              <li><a href="{% url 'wellness:health-events' %}"><i class="bi bi-chevron-right"></i> Health</a></li>
+              <li><a href="{% url 'wellness:friendship-events' %}"><i class="bi bi-chevron-right"></i> Friendship</a></li>
+              <li><a href="{% url 'wellness:support-events' %}"><i class="bi bi-chevron-right"></i> Support</a></li>
+{#              <li><a href="{% url 'wellness:calendar' %}"><i class="bi bi-chevron-right"></i> Calendar</a></li>#}
+{#              <li><a href="{% url 'wellness:about' %}"><i class="bi bi-chevron-right"></i> About</a></li>#}
+{#              <li><a href="{% url 'wellness:logout' %}"><i class="bi bi-chevron-right"></i> Logout</a></li>#}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>Wellness</span></strong>. All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <!-- JavaScript for Sliding Menu Panel -->
+  <script>
+    const myItemsButton = document.getElementById('myItemsButton');
+    const myItemsPanel = document.getElementById('myItemsPanel');
+    const closeMenuButton = document.getElementById('closeMenuButton');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    {#Show the My Items panel#}
+    myItemsButton.addEventListener('click', () => {
+      myItemsPanel.classList.add('open');
+      menuOverlay.classList.add('open');
+    });
+
+     {#Hide the My Items panel#}
+    closeMenuButton.addEventListener('click', closeMenuPanel);
+    menuOverlay.addEventListener('click', closeMenuPanel);
+
+    function closeMenuPanel() {
+      myItemsPanel.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    }
+  </script>
+
+
+
+</body>
+</html>

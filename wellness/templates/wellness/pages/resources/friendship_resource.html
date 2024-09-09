@@ -1,0 +1,101 @@
+{% extends 'wellness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Friendship | Resources | Wellness</title>
+{% endblock title %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="section-header d-flex justify-content-between align-items-center mb-5">
+      <h2>Friendship</h2>
+      <div><a href="{% url 'wellness:friendship-events' %}" class="more">Events</a></div>
+    </div>
+    <div class="row">
+      <div class="col-md-9" data-aos="fade-up">
+        <h2>Resources</h2>
+        {% if friendship_f %}
+        <div class="d-md-flex post-entry-2 half">
+          <a class="me-4 thumbnail">
+            <img src="{% static 'assets/images/resource/' %}{{friendship_f.art_uri}}.jpg" alt="{{friendship_f.art_alt}}" class="img-fluid">
+          </a>
+          <div>
+            <div class="post-meta"><span class="date">{{friendship_f.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{friendship_f.series_title}}</span></div>
+            <h3><a>{{friendship_f.title}}</a></h3>
+            <p>{{friendship_f.description | truncatewords:44}}</p>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:resource-detail' friendship_f.id %}">Read more</a>
+          </div>
+        </div>
+        {% else %}
+        <h3>Sorry, no resources have been posted in this category as of today.</h3>
+        {% endif %}
+        <div class="row">
+          {% if friendship_r %}
+          {% for r in friendship_r %}
+          {% if forloop.first %}
+          <div class="col-md-6">
+          {% endif %}
+          {% if forloop.counter == 4 %}
+          <div class="col-md-6">
+          {% endif %}
+            <div class="post-entry-1">
+              <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span> <span>{{r.series_title}}</span></div>
+              <h2><a>{{r.title}}</a></h2>
+              <p class="mb-4 d-block">{{r.description | truncatewords:44}}</p>
+              <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:resource-detail' r.id %}"><b>Read more</b></a>
+            </div>
+          {% if forloop.counter == 3 or forloop.last %}
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {%if friendship_r.paginator.num_pages > 1 %}
+          <div class="text-start py-4">
+            <div class="custom-pagination">
+              {% if friendship_r.has_previous %}
+              <a href="?page={{friendship_r.previous_page_number}}" class="prev">Previous</a>
+              {% else %}
+              <a class="not-active">Previous</a>
+              {% endif %}
+              {% for e in friendship_r.paginator.page_range %}
+              <a href="?page={{forloop.counter}}" {% if friendship_r.number == forloop.counter %} class="active" {% endif %}>{{forloop.counter}}</a>
+              {% endfor %}
+              {% if friendship_r.has_next %}
+              <a href="?page={{friendship_r.next_page_number}}" class="next">Next</a>
+              {% else %}
+              <a class="not-active">Next</a>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="aside-block">
+          <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button disabled class="nav-link active" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest Resources</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
+              {% if latest_r %}
+              {% for r in latest_r %}
+              <div class="post-entry-1 border-bottom">
+                <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{r.series_title}}</span></div>
+                <h2 class="mb-2"><a href="#">{{r.title}}</a></h2>
+                <p>{{r.description | truncatewords:44}}</p>
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:resource-detail' r.id %}"><b>Read more</b></a>
+              </div>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

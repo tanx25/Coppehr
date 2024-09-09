@@ -1,0 +1,91 @@
+{% extends 'wellness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>About | Wellness</title>
+{% endblock title%}
+
+{% block content %}
+<section>
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-5">
+        <h1 class="page-title">About us</h1>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="d-md-flex post-entry-2 half">
+        <a href="#" class="me-4 thumbnail">
+          <img src="{% static 'assets/images/site/pexels-doctor-paper-desk.jpg' %}" alt="" class="img-fluid">
+        </a>
+        <div class="ps-md-5 mt-4 mt-md-0">
+          <!-- <div class="post-meta mt-4">About us</div> -->
+          <h2 class="mb-4 display-4">The Center on Aging</h2>
+          <p>The physicians and nurse practitioners at The Center on Aging provide both primary care and consultation to older adults in a multidisciplinary setting.  The Center on Aging is dedicated to providing older adults with comprehensive care so that they can lead fulfilling lives to the greatest extent possible.</p>
+        </div>
+      </div>
+      <div class="d-md-flex post-entry-2 half mt-5">
+        <a href="#" class="me-4 thumbnail order-2">
+          <img src="{% static 'assets/images/site/pexels-old-people-around-computer.jpg' %}" alt="" class="img-fluid">
+        </a>
+        <div class="pe-md-5 mt-4 mt-md-0">
+          <!-- <div class="post-meta mt-4">Mission &amp; Vision</div> -->
+          <h2 class="mb-4 display-4">Mission &amp; Vision</h2>
+          <p>The Wellness Program’s mission is to promote wellness for the Center on Aging’s patients. Inspired by those around him, Dr Ron Adelman, Executive Direct or of the Center on Aging, conceptualized a platform where patients could feel less isolated by making social connections with one another and providers. By offering educational programs on food and nutrition, exercise, cultural enrichment and more, we hope participants will meet new people, make new friends, and learn new things.</p>
+          <p>We welcome you to the program and invite you to explore all its offerings which are specially designed for you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h2 class="display-4">Our Team</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{% static 'assets/images/site/rdadelman.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>Ronald D. Adelman, M.D.</h4>
+        <span class="d-block mb-3 text-uppercase">Executive Medical Director</span>
+        <p>Dr. Adelman is the Co-Chief of the Division of Geriatrics and Palliative Medicine at the New York-Presbyterian Hospital/Weill Cornell Medical Center. He is the Emilie Roy Corey Professor of Geriatrics and Gerontology. Dr. Adelman is also the Executive Medical Director of the Center on Aging, and the director of the WELLNESS Program.</p>
+      </div>
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{% static 'assets/images/site/sara-czaja.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>Sara J. Czaja, Ph.D.</h4>
+        <span class="d-block mb-3 text-uppercase">Director of the CABR</span>
+        <p>Dr. Czaja is the Gladys and Roland Harriman Professor of Medicine, and the Director of the Center on Aging and Behavioral Research at Weill Cornell Medicine. She is also the Co–Director of the Wellness Program. Her research focuses on the interface between older adults and technology systems, behavioral interventions to support aging adults and family caregivers, and novel methods of functional assessment. </p>
+      </div>
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{% static 'assets/images/site/regenbogen-weiss-sandy.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>Sandy Regenbogen-Weiss</h4>
+        <span class="d-block mb-3 text-uppercase">Program Manager</span>
+        <p>Sandy is the Program Manager for the Wellness Center, at the Center on Aging, in Geriatrics and Palliative Medicine. For more than eight years, Ms. Regenbogen-Weiss ran the HealthOutreach program of NewYork-Presbyterian providing health and wellness lectures to people sixty years and older, as well as managing the Caregivers Service and the Lifeline Personal Emergency System.</p>
+      </div>
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{% static 'assets/images/site/cury-mariana.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>Mariana Cury</h4>
+        <span class="d-block mb-3 text-uppercase">Research Program Coordinator</span>
+        <p>Mariana is the Program Coordinator for the Center on Aging and Behavioral Research.</p>
+      </div>
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{% static 'assets/images/site/park-sophie.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>Sophie Park</h4>
+        <span class="d-block mb-3 text-uppercase">Senior Research Assistant</span>
+        <p>Sophie is a Senior Research Assistant for the Center on Aging and Behavioral Research. After studying under the Director of Geriatric Medicine at Queensland Health in Australia, she has continued to work on enhancing the lives of older adults. She enjoys knitting, trying new foods, and spending time with her dog, Ivy.</p>
+      </div>
+      <div class="col-lg-4 text-center mb-5">
+        <img src="{% static 'assets/images/site/costantini-helena.jpg' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+        <h4>Helena Costantini</h4>
+        <span class="d-block mb-3 text-uppercase">Research Assistant</span>
+        <p>Helena is a Research Assistant for the Center on Aging and Behavioral Research</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content%}

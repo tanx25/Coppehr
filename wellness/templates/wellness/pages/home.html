@@ -1,0 +1,180 @@
+{% extends 'wellness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Wellness - Home</title>
+{% endblock title %}
+
+{% block content %}
+<!-- ======= Hero Slider Section ======= -->
+<section id="hero-slider" class="hero-slider">
+  <div class="container-md" data-aos="fade-in">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="swiper sliderFeaturedPosts">
+          {% include 'wellness/pages/includes/swiper_wrapper.html' with announcements=announcements %}
+          <div style="margin-top: 50px;"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</section>
+<!-- End Hero Slider Section -->
+
+<!-- ======= Health Category Section ======= -->
+<section class="category-section">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header d-flex justify-content-between align-items-center mb-5">
+      <h2>Health</h2>
+      <div><a href="{% url 'wellness:health-events' %}" class="more">See All</a></div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        {% if health_f %}
+        <div class="d-lg-flex post-entry-2">
+          <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+            <img src="{% static 'assets/images/event/' %}{{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid">
+          </a>
+          <div class="content">
+            <div class="post-meta">
+              <span class="date">{{health_f.get_category_display}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{health_f.series_title}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{health_f.date | date:"M d"}}</span>
+            </div>
+            <h3><a>{{health_f.title}}</a></h3>
+            <p>{{health_f.description | truncatewords:44}}</p>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' health_f.id %}">Read more</a>
+          </div>
+        </div>
+        {% else %}
+        <h3>Sorry, it appears that no events are scheduled in this category as of today.</h3>
+        {% endif %}
+      </div><!-- End .col-md-9 -->
+      <div class="col-md-3">
+        {% for e in health_o %}
+        <div class="post-entry-1 border-bottom">
+          <div class="post-meta">
+            <span class="date">{{e.get_category_display}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{e.series_title}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{e.date | date:"M d"}}</span>
+          </div>
+          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
+          <p>{{e.description | truncatewords:44}}</p>
+          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+        </div>
+        {% endfor %}
+      </div><!-- End .col-md-3 -->
+    </div><!-- End .row -->
+  </div>
+</section><!-- End Health Category Section -->
+
+<!-- ======= Friendship Category Section ======= -->
+<section class="category-section">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header d-flex justify-content-between align-items-center mb-5">
+      <h2>Friendship</h2>
+      <div><a href="{% url 'wellness:friendship-events' %}" class="more">See All</a></div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 order-md-2">
+        {% if friendship_f %}
+        <div class="d-lg-flex post-entry-2">
+          <a class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
+            <img src="{% static 'assets/images/event/' %}{{friendship_f.art_uri}}.jpg" alt="{{friendship_f.art_alt}}" class="img-fluid">
+          </a>
+          <div class="content">
+            <div class="post-meta">
+              <span class="date">{{friendship_f.get_category_display}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{friendship_f.series_title}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{friendship_f.date | date:"M d"}}</span>
+            </div>
+            <h3><a>{{friendship_f.title}}</a></h3>
+            <p>{{friendship_f.description | truncatewords:44}}</p>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' friendship_f.id %}">Read more</a>
+          </div>
+        </div>
+        {% else %}
+        <h3>Sorry, it appears that no events are scheduled in this category as of today.</h3>
+        {% endif %}
+      </div><!-- End .col-md-9 -->
+      <div class="col-md-3">
+        {% for e in friendship_o %}
+        <div class="post-entry-1 border-bottom">
+          <div class="post-meta">
+            <span class="date">{{e.get_category_display}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{e.series_title}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{e.date | date:"M d"}}</span>
+          </div>
+          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
+          <p>{{e.description | truncatewords:44}}</p>
+          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+        </div>
+        {% endfor %}
+      </div><!-- End .col-md-3 -->
+    </div><!-- End .row -->
+  </div>
+</section><!-- End Friendship Category Section -->
+
+<!-- ======= Support Category Section ======= -->
+<section class="category-section">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header d-flex justify-content-between align-items-center mb-5">
+      <h2>Support</h2>
+      <div><a href="{% url 'wellness:support-events' %}" class="more">See All</a></div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        {% if support_f %}
+        <div class="d-lg-flex post-entry-2">
+          <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+            <img src="{% static 'assets/images/event/' %}{{support_f.art_uri}}.jpg" alt="{{support_f.art_alt}}" class="img-fluid">
+          </a>
+          <div class="content">
+            <div class="post-meta">
+              <span class="date">{{support_f.get_category_display}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{support_f.series_title}}</span>
+              <span class="mx-1">&bullet;</span>
+              <span>{{support_f.date | date:"M d"}}</span>
+            </div>
+            <h3><a>{{support_f.title}}</a></h3>
+            <p>{{support_f.description | truncatewords:44}}</p>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' support_f.id %}">Read more</a>
+          </div>
+        </div>
+        {% else %}
+        <h3>Sorry, it appears that no events are scheduled in this category as of today.</h3>
+        {% endif %}
+      </div><!-- End .col-md-9 -->
+      <div class="col-md-3">
+        {% for e in support_o %}
+        <div class="post-entry-1 border-bottom">
+          <div class="post-meta">
+            <span class="date">{{e.get_category_display}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{e.series_title}}</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{e.date | date:"M d"}}</span>
+          </div>
+          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
+          <p>{{e.description | truncatewords:44}}</p>
+          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+        </div>
+        {% endfor %}
+      </div><!-- End .col-md-3 -->
+    </div><!-- End .row -->
+  </div>
+</section><!-- End Support Category Section -->
+{% endblock content %}
