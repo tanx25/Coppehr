@@ -122,18 +122,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Login settings
-LOGIN_URL = 'wellness:login'
-LOGIN_REDIRECT_URL = 'wellness:home'
-LOGOUT_REDIRECT_URL = 'wellness:login'
 
-# Security settings
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-
-# Session settings
-SESSION_COOKIE_AGE = 60 * 60 * 24
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 
