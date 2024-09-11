@@ -28,6 +28,7 @@
   </style>
 </head>
 <body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -41,8 +42,6 @@
                 <li><a href="{% url 'coppehr:health-events' %}">Health</a></li>
                 <li><a href="{% url 'coppehr:friendship-events' %}">Friendship</a></li>
                 <li><a href="{% url 'coppehr:support-events' %}">Support</a></li>
-
-
                 <li class="mobile"><a href="{% url 'coppehr:calendar' %}">Calendars</a></li>
                 <li class="mobile"><a href="{% url 'coppehr:about' %}">About</a></li>
                 <li class="mobile"><a href="{% url 'coppehr:logout' %}">Logout</a></li>
@@ -50,16 +49,10 @@
         </nav>
         <!-- My Items Button -->
       <button id="myItemsButton" class="menu-button">MY ITEMS</button>
-
-
-
-
-<!-- Mobile Nav Toggle -->
-<div class="mobile-nav">
-    <i class="bi bi-list mobile-nav-toggle"></i>
-</div>
-
-
+        <!-- Mobile Nav Toggle -->
+        <div class="mobile-nav">
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </div>
     </div>
   </header>
   <!-- End Header -->
@@ -75,10 +68,6 @@
   <div id="myItemsPanel" class="menu-panel">
     <button id="closeMenuButton" class="close-button">&times;</button>
     <div class="menu-content">
-
-{#        <a href="{% url 'coppehr:health-events' %}">Health</a>#}
-{#        <a href="{% url 'coppehr:friendship-events' %}">Friendship</a>#}
-{#        <a href="{% url 'coppehr:support-events' %}">Support</a>#}
         <a href="{% url 'coppehr:calendar' %}">Calendars</a>
         <a href="{% url 'coppehr:about' %}">About</a>
         <a href="{% url 'coppehr:logout' %}">Logout</a>
@@ -105,9 +94,6 @@
               <li><a href="{% url 'coppehr:health-events' %}"><i class="bi bi-chevron-right"></i> Health</a></li>
               <li><a href="{% url 'coppehr:friendship-events' %}"><i class="bi bi-chevron-right"></i> Friendship</a></li>
               <li><a href="{% url 'coppehr:support-events' %}"><i class="bi bi-chevron-right"></i> Support</a></li>
-{#              <li><a href="{% url 'coppehr:calendar' %}"><i class="bi bi-chevron-right"></i> Calendar</a></li>#}
-{#              <li><a href="{% url 'coppehr:about' %}"><i class="bi bi-chevron-right"></i> About</a></li>#}
-{#              <li><a href="{% url 'coppehr:logout' %}"><i class="bi bi-chevron-right"></i> Logout</a></li>#}
             </ul>
           </div>
         </div>
