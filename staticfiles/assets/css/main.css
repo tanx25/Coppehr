@@ -12,6 +12,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+
+
+
 :root {
   scroll-behavior: smooth;
 }
@@ -19,6 +23,38 @@
 body {
   color: rgba(var(--color-primary-rgb), 1);
 }
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.home-page {
+  background-color: #fcf6f4;
+}
+
+
+.friendship-page {
+  background-color: #f4c4bc;
+}
+
+
+.health-page {
+  background-color: #dfe4e4;
+}
+
+
+.support-page {
+  background-color: #bfe6e0;
+}
+
+.contact-page {
+  background-color: #ffe8c6;
+}
+
 
 a {
   color: var(--color-links);
@@ -30,14 +66,14 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-primary);
-}
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*h4,*/
+/*h5,*/
+/*h6 {*/
+/*  font-family: var(--font-primary);*/
+/*}*/
 
 #main {
   margin-top: 90px;
