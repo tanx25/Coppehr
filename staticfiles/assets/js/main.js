@@ -181,12 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
-});
 
 
-/*NEW*/
-document.addEventListener('DOMContentLoaded', () => {
-
+  /*NEW*/
   const myItemsButton = document.getElementById('myItemsButton');
   const myItemsPanel = document.getElementById('myItemsPanel');
   const closeMenuButton = document.getElementById('closeMenuButton');
@@ -210,4 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error("My Items panel error.");
   }
+
 });
+
+
+
