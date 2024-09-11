@@ -58,7 +58,7 @@ def get_calendar_events():
             'date': rdate,
             'groups': groups
         })
-    return (weeks, items)
+    return weeks, items
 
 
 def get_events(category):
@@ -72,8 +72,8 @@ def get_events(category):
 
 
 def get_upcoming_events(category):
-    MIN_WEEKS_AHEAD = 2
-    MAX_WEEKS_AHEAD = 3
+    MIN_WEEKS_AHEAD = 1
+    MAX_WEEKS_AHEAD = 10
     monday_this_week = _get_date_for_monday_of_this_week()
     events = Event.objects \
         .filter(category=category) \
