@@ -1,30 +1,20 @@
-"""
-URL configuration for project project.
+from django.urls import path
+from . import views
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.conf.urls.static import static
-from django.contrib import admin
-from django.urls import path, include
-
-from Coppehr import settings
-
-admin.site.site_header = "Wellness Researcher Portal"
-admin.site.index_title = "Administration"
-admin.site.site_title = "Wellness"
+app_name = 'coppehr'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('wellness.urls', namespace='wellness')),
+    path('', views.home, name='home'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
+    path('calendar/', views.calendar, name='calendar'),
+    path('about/', views.about, name='about'),
+    path('event/<int:event_id>/', views.event_detail, name='event-detail'),
+    path('resource/<int:resource_id>/', views.resource_detail, name='resource-detail'),
+    path('health-events/', views.health_events, name='health-events'),
+    path('friendship-events/', views.friendship_events, name='friendship-events'),
+    path('support-events/', views.support_events, name='support-events'),
+    path('health-resources/', views.health_resources, name='health-resources'),
+    path('friendship-resources/', views.friendship_resources, name='friendship-resources'),
+    path('support-resources/', views.support_resources, name='support-resources'),
 ]

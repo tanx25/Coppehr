@@ -1,4 +1,4 @@
-{% extends 'wellness/base.html' %}
+{% extends 'coppehr/base.html' %}
 
 {% load static %}
 
@@ -14,7 +14,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="swiper sliderFeaturedPosts">
-          {% include 'wellness/pages/includes/swiper_wrapper.html' with announcements=announcements %}
+          {% include 'coppehr/pages/includes/swiper_wrapper.html' with announcements=announcements %}
           <div style="margin-top: 50px;"></div>
           <div class="swiper-pagination"></div>
         </div>
@@ -28,7 +28,7 @@
   <div class="container">
     <div class="section-header d-flex justify-content-between align-items-center mb-5">
       <h2>Friendship</h2>
-      <div><a href="{% url 'wellness:friendship-resources' %}" class="more">Resources</a></div>
+      <div><a href="{% url 'coppehr:friendship-resources' %}" class="more">Resources</a></div>
     </div>
     <div class="row">
       <div class="col-md-9" data-aos="fade-up">
@@ -48,7 +48,7 @@
             </div>
             <h3><a>{{e.title}}</a></h3>
             <p>{{e.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
           </div>
         </div>
         {% empty %}
@@ -94,7 +94,7 @@
                 </div>
                 <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
                 <p>{{e.description | truncatewords:44}}</p>
-                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
               </div>
               {% endfor %}
             </div>

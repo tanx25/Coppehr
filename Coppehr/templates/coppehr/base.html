@@ -5,9 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% block title %}<title>Wellness - Your Path to Well-being</title>{% endblock title %}
-  <meta content="Promote wellness and connect with the community." name="description">
-  <meta content="wellness, health, community, friendship, support" name="keywords">
+  {% block title %}{% endblock title %}
+  <meta content="" name="description">
+  <meta content="" name="keywords">
   <!-- Favicons -->
   <link href="{% static 'assets/images/site/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/images/site/apple-touch-icon.png' %}" rel="apple-touch-icon">
@@ -32,20 +32,20 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <!-- Logo -->
-      <a href="{% url 'wellness:home' %}" class="logo d-flex align-items-center">
+      <a href="{% url 'coppehr:home' %}" class="logo d-flex align-items-center">
         <h1>COPPEhR</h1>
       </a>
       <!-- Navbar -->
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="{% url 'wellness:health-events' %}">Health</a></li>
-                <li><a href="{% url 'wellness:friendship-events' %}">Friendship</a></li>
-                <li><a href="{% url 'wellness:support-events' %}">Support</a></li>
+                <li><a href="{% url 'coppehr:health-events' %}">Health</a></li>
+                <li><a href="{% url 'coppehr:friendship-events' %}">Friendship</a></li>
+                <li><a href="{% url 'coppehr:support-events' %}">Support</a></li>
 
 
-                <li class="mobile"><a href="{% url 'wellness:calendar' %}">Calendars</a></li>
-                <li class="mobile"><a href="{% url 'wellness:about' %}">About</a></li>
-                <li class="mobile"><a href="{% url 'wellness:logout' %}">Logout</a></li>
+                <li class="mobile"><a href="{% url 'coppehr:calendar' %}">Calendars</a></li>
+                <li class="mobile"><a href="{% url 'coppehr:about' %}">About</a></li>
+                <li class="mobile"><a href="{% url 'coppehr:logout' %}">Logout</a></li>
             </ul>
         </nav>
         <!-- My Items Button -->
@@ -75,12 +75,12 @@
   <div id="myItemsPanel" class="menu-panel">
     <button id="closeMenuButton" class="close-button">&times;</button>
     <div class="menu-content">
-{#        <a href="{% url 'wellness:health-events' %}">Health</a>#}
-{#        <a href="{% url 'wellness:friendship-events' %}">Friendship</a>#}
-{#        <a href="{% url 'wellness:support-events' %}">Support</a>#}
-        <a href="{% url 'wellness:calendar' %}">Calendars</a>
-        <a href="{% url 'wellness:about' %}">About</a>
-        <a href="{% url 'wellness:logout' %}">Logout</a>
+{#        <a href="{% url 'coppehr:health-events' %}">Health</a>#}
+{#        <a href="{% url 'coppehr:friendship-events' %}">Friendship</a>#}
+{#        <a href="{% url 'coppehr:support-events' %}">Support</a>#}
+        <a href="{% url 'coppehr:calendar' %}">Calendars</a>
+        <a href="{% url 'coppehr:about' %}">About</a>
+        <a href="{% url 'coppehr:logout' %}">Logout</a>
     </div>
   </div>
   <div id="menuOverlay" class="menu-overlay"></div>
@@ -94,19 +94,19 @@
           <div class="col-md-6">
             <h3 class="footer-heading">About Wellness</h3>
             <p>The Wellness Program's mission is to promote wellness for the Center on Aging's patients. Inspired by those around him, Dr. Ron Adelman conceptualized a platform where patients could feel less isolated by making social connections with one another and providers. By offering educational programs on food and nutrition, exercise, cultural enrichment, and more, we hope participants will meet new people, make new friends, and learn new things.</p>
-            <p><a href="{% url 'wellness:about' %}" class="footer-link-more">Learn More</a></p>
+            <p><a href="{% url 'coppehr:about' %}" class="footer-link-more">Learn More</a></p>
           </div>
           <div class="col-md-2"></div>
           <div class="col-md-4">
             <h3 class="footer-heading">Navigation</h3>
             <ul class="footer-links list-unstyled">
-              <li><a href="{% url 'wellness:home' %}"><i class="bi bi-chevron-right"></i> Home</a></li>
-              <li><a href="{% url 'wellness:health-events' %}"><i class="bi bi-chevron-right"></i> Health</a></li>
-              <li><a href="{% url 'wellness:friendship-events' %}"><i class="bi bi-chevron-right"></i> Friendship</a></li>
-              <li><a href="{% url 'wellness:support-events' %}"><i class="bi bi-chevron-right"></i> Support</a></li>
-{#              <li><a href="{% url 'wellness:calendar' %}"><i class="bi bi-chevron-right"></i> Calendar</a></li>#}
-{#              <li><a href="{% url 'wellness:about' %}"><i class="bi bi-chevron-right"></i> About</a></li>#}
-{#              <li><a href="{% url 'wellness:logout' %}"><i class="bi bi-chevron-right"></i> Logout</a></li>#}
+              <li><a href="{% url 'coppehr:home' %}"><i class="bi bi-chevron-right"></i> Home</a></li>
+              <li><a href="{% url 'coppehr:health-events' %}"><i class="bi bi-chevron-right"></i> Health</a></li>
+              <li><a href="{% url 'coppehr:friendship-events' %}"><i class="bi bi-chevron-right"></i> Friendship</a></li>
+              <li><a href="{% url 'coppehr:support-events' %}"><i class="bi bi-chevron-right"></i> Support</a></li>
+{#              <li><a href="{% url 'coppehr:calendar' %}"><i class="bi bi-chevron-right"></i> Calendar</a></li>#}
+{#              <li><a href="{% url 'coppehr:about' %}"><i class="bi bi-chevron-right"></i> About</a></li>#}
+{#              <li><a href="{% url 'coppehr:logout' %}"><i class="bi bi-chevron-right"></i> Logout</a></li>#}
             </ul>
           </div>
         </div>

@@ -1,20 +1,20 @@
-{% extends 'wellness/base.html' %}
+{% extends 'coppehr/base.html' %}
 
 {% load static %}
 
 {% block title %}
-<title>Health | Events | Wellness</title>
+<title>Support | Events | Wellness</title>
 {% endblock title %}
 
 {% block content %}
-    <body class="health-page">
+    <body class="support-page">
 <section id="hero-slider" class="hero-slider">
   <div class="container-md" data-aos="fade-in">
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8">
         <div class="swiper sliderFeaturedPosts">
-          {% include 'wellness/pages/includes/swiper_wrapper.html' with announcements=announcements %}
+          {% include 'coppehr/pages/includes/swiper_wrapper.html' with announcements=announcements %}
           <div style="margin-top: 50px;"></div>
           <div class="swiper-pagination"></div>
         </div>
@@ -27,13 +27,13 @@
 <section>
   <div class="container">
     <div class="section-header d-flex justify-content-between align-items-center mb-5">
-      <h2>Health</h2>
-      <div><a href="{% url 'wellness:health-resources' %}" class="more">Resources</a></div>
+      <h2>Support</h2>
+      <div><a href="{% url 'coppehr:support-resources' %}" class="more">Resources</a></div>
     </div>
     <div class="row">
       <div class="col-md-9" data-aos="fade-up">
         <h2>Events</h2>
-        {% for e in health_e %}
+        {% for e in support_e %}
         <div class="d-md-flex post-entry-2 half">
           <a class="me-4 thumbnail">
             <img src="{% static 'assets/images/event/' %}{{e.art_uri}}.jpg" alt="{{e.art_alt}}" class="img-fluid">
@@ -48,25 +48,25 @@
             </div>
             <h3><a>{{e.title}}</a></h3>
             <p>{{e.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
           </div>
         </div>
         {% empty %}
         <h3>Sorry, no events are scheduled in this category as of today.</h3>
         {% endfor %}
-        {% if health_e.paginator.num_pages > 1 %}
+        {% if support_e.paginator.num_pages > 1 %}
         <div class="text-start py-4">
           <div class="custom-pagination">
-            {% if health_e.has_previous %}
-            <a href="?page={{health_e.previous_page_number}}" class="prev">Previous</a>
+            {% if support_e.has_previous %}
+            <a href="?page={{support_e.previous_page_number}}" class="prev">Previous</a>
             {% else %}
             <a class="not-active">Previous</a>
             {% endif %}
-            {% for e in health_e.paginator.page_range %}
-            <a href="?page={{forloop.counter}}" {% if health_e.number == forloop.counter %} class="active" {% endif %}>{{forloop.counter}}</a>
+            {% for e in support_e.paginator.page_range %}
+            <a href="?page={{forloop.counter}}" {% if support_e.number == forloop.counter %} class="active" {% endif %}>{{forloop.counter}}</a>
             {% endfor %}
-            {% if health_e.has_next %}
-            <a href="?page={{health_e.next_page_number}}" class="next">Next</a>
+            {% if support_e.has_next %}
+            <a href="?page={{support_e.next_page_number}}" class="next">Next</a>
             {% else %}
             <a class="not-active">Next</a>
             {% endif %}
@@ -94,7 +94,7 @@
                 </div>
                 <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
                 <p>{{e.description | truncatewords:44}}</p>
-                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
               </div>
               {% endfor %}
             </div>

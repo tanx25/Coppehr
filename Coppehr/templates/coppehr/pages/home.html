@@ -1,4 +1,4 @@
-{% extends 'wellness/base.html' %}
+{% extends 'coppehr/base.html' %}
 
 {% load static %}
 
@@ -15,7 +15,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="swiper sliderFeaturedPosts">
-          {% include 'wellness/pages/includes/swiper_wrapper.html' with announcements=announcements %}
+          {% include 'coppehr/pages/includes/swiper_wrapper.html' with announcements=announcements %}
           <div style="margin-top: 50px;"></div>
           <div class="swiper-pagination"></div>
         </div>
@@ -30,7 +30,7 @@
   <div class="container" data-aos="fade-up">
     <div class="section-header d-flex justify-content-between align-items-center mb-5">
       <h2>Health</h2>
-      <div><a href="{% url 'wellness:health-events' %}" class="more">See All</a></div>
+      <div><a href="{% url 'coppehr:health-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
       <div class="col-md-9">
@@ -49,7 +49,7 @@
             </div>
             <h3><a>{{health_f.title}}</a></h3>
             <p>{{health_f.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' health_f.id %}">Read more</a>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' health_f.id %}">Read more</a>
           </div>
         </div>
         {% else %}
@@ -68,7 +68,7 @@
           </div>
           <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
           <p>{{e.description | truncatewords:44}}</p>
-          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
         </div>
         {% endfor %}
       </div><!-- End .col-md-3 -->
@@ -81,7 +81,7 @@
   <div class="container" data-aos="fade-up">
     <div class="section-header d-flex justify-content-between align-items-center mb-5">
       <h2>Friendship</h2>
-      <div><a href="{% url 'wellness:friendship-events' %}" class="more">See All</a></div>
+      <div><a href="{% url 'coppehr:friendship-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
       <div class="col-md-9 order-md-2">
@@ -100,7 +100,7 @@
             </div>
             <h3><a>{{friendship_f.title}}</a></h3>
             <p>{{friendship_f.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' friendship_f.id %}">Read more</a>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' friendship_f.id %}">Read more</a>
           </div>
         </div>
         {% else %}
@@ -119,7 +119,7 @@
           </div>
           <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
           <p>{{e.description | truncatewords:44}}</p>
-          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
         </div>
         {% endfor %}
       </div><!-- End .col-md-3 -->
@@ -132,7 +132,7 @@
   <div class="container" data-aos="fade-up">
     <div class="section-header d-flex justify-content-between align-items-center mb-5">
       <h2>Support</h2>
-      <div><a href="{% url 'wellness:support-events' %}" class="more">See All</a></div>
+      <div><a href="{% url 'coppehr:support-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
       <div class="col-md-9">
@@ -151,7 +151,7 @@
             </div>
             <h3><a>{{support_f.title}}</a></h3>
             <p>{{support_f.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' support_f.id %}">Read more</a>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' support_f.id %}">Read more</a>
           </div>
         </div>
         {% else %}
@@ -170,7 +170,7 @@
           </div>
           <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
           <p>{{e.description | truncatewords:44}}</p>
-          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:event-detail' e.id %}"><b>Read more</b></a>
+          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
         </div>
         {% endfor %}
       </div><!-- End .col-md-3 -->
