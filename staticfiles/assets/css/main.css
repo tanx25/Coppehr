@@ -608,7 +608,7 @@ section {
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
   .myItemsButton {
-    display: block;
+    display: none;
   }
     .mobile-menu-items {
         display: block;
