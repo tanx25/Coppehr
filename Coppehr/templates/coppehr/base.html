@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% block title %}{% endblock title %}
+  <title>COPPEhR</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->
@@ -24,8 +24,7 @@
   <!-- Template Main CSS Files -->
   <link href="{% static 'assets/css/variables.css' %}" rel="stylesheet">
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
-  <style>
-  </style>
+
 </head>
 <body>
 
@@ -42,13 +41,14 @@
                 <li><a href="{% url 'coppehr:health-events' %}">Health</a></li>
                 <li><a href="{% url 'coppehr:friendship-events' %}">Friendship</a></li>
                 <li><a href="{% url 'coppehr:support-events' %}">Support</a></li>
+                <!-- NEW -->
                 <li class="mobile"><a href="{% url 'coppehr:calendar' %}">Calendars</a></li>
                 <li class="mobile"><a href="{% url 'coppehr:about' %}">About</a></li>
                 <li class="mobile"><a href="{% url 'coppehr:logout' %}">Logout</a></li>
             </ul>
         </nav>
         <!-- My Items Button -->
-      <button id="myItemsButton" class="menu-button">MY ITEMS</button>
+        <button id="myItemsButton" class="menu-button">MY ITEMS</button>
         <!-- Mobile Nav Toggle -->
         <div class="mobile-nav">
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -64,6 +64,7 @@
   </main>
   <!-- End Main Content -->
 
+  <!-- NEW -->
   <!-- My Items Sliding Panel -->
   <div id="myItemsPanel" class="menu-panel">
     <button id="closeMenuButton" class="close-button">&times;</button>
@@ -124,28 +125,8 @@
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
 
-  <!-- JavaScript for Sliding Menu Panel -->
-  <script>
-    const myItemsButton = document.getElementById('myItemsButton');
-    const myItemsPanel = document.getElementById('myItemsPanel');
-    const closeMenuButton = document.getElementById('closeMenuButton');
-    const menuOverlay = document.getElementById('menuOverlay');
 
-    {#Show the My Items panel#}
-    myItemsButton.addEventListener('click', () => {
-      myItemsPanel.classList.add('open');
-      menuOverlay.classList.add('open');
-    });
 
-     {#Hide the My Items panel#}
-    closeMenuButton.addEventListener('click', closeMenuPanel);
-    menuOverlay.addEventListener('click', closeMenuPanel);
-
-    function closeMenuPanel() {
-      myItemsPanel.classList.remove('open');
-      menuOverlay.classList.remove('open');
-    }
-  </script>
 
 </body>
 </html>

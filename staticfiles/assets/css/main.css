@@ -29,29 +29,24 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-
+/*NEW*/
+/*Changing background color*/
 .home-page {
   background-color: #fcf6f4;
 }
-
-
 .friendship-page {
   background-color: #f4c4bc;
 }
-
-
 .health-page {
   background-color: #dfe4e4;
 }
-
-
 .support-page {
   background-color: #bfe6e0;
 }
-
 .contact-page {
   background-color: #ffe8c6;
 }
+/*END NEW*/
 
 
 a {
@@ -64,15 +59,6 @@ a:hover {
   text-decoration: none;
 }
 
-/*h1,*/
-/*h2,*/
-/*h3,*/
-/*h4,*/
-/*h5,*/
-/*h6 {*/
-/*  font-family: var(--font-primary);*/
-/*}*/
-
 #main {
   margin-top: 90px;
 }
@@ -80,85 +66,8 @@ a:hover {
 /*--------------------------------------------------------------
 # Login form
 --------------------------------------------------------------*/
-/*.login-button {*/
-/*  border: 1px solid #212529;*/
-/*  padding: 8px 16px;*/
-/*  background: none;*/
-/*  cursor: pointer;*/
-/*  font-size: 16px;*/
-/*  font-weight: 500;*/
-/*}*/
 
-/*.content {*/
-/*  text-align: left;*/
-/*  max-width: 600px;*/
-/*}*/
-
-/*.content h1 {*/
-/*  font-size: 48px;*/
-/*  font-weight: bold;*/
-/*  line-height: 1.2;*/
-/*  margin: 0;*/
-/*}*/
-
-/*.content h1 span {*/
-/*  font-weight: 200;*/
-/*}*/
-
-/*.content p {*/
-/*  margin-top: 20px;*/
-/*  font-size: 18px;*/
-/*  line-height: 1.5;*/
-/*}*/
-
-/*.login-panel {*/
-/*  position: fixed;*/
-/*  top: 0;*/
-/*  right: -100vw;*/
-/*  width: 500px;*/
-/*  height: 100vh;*/
-/*  background: #ffffff;*/
-/*  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);*/
-/*  transition: right 0.8s ease;*/
-/*  z-index: 9999;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*}*/
-
-/*.login-panel.open {*/
-/*  right: 0;*/
-/*}*/
-
-/*.login-overlay {*/
-/*  position: fixed;*/
-/*  top: 0;*/
-/*  left: 0;*/
-/*  width: 100vw;*/
-/*  height: 100vh;*/
-/*  background: rgba(0, 0, 0, 0.4);*/
-/*  opacity: 0;*/
-/*  visibility: hidden;*/
-/*  transition: opacity 0.4s ease, visibility 0.4s;*/
-/*  z-index: 9998;*/
-/*}*/
-
-/*.login-overlay.open {*/
-/*  opacity: 1;*/
-/*  visibility: visible;*/
-/*}*/
-
-/*.login-content {*/
-/*  width: 100%;*/
-/*  padding: 20px 40px 40px;*/
-/*  text-align: left;*/
-/*  font-family: 'Inter', sans-serif;*/
-/*}*/
-
-
-
-
-
+/*NEW*/
 .close-button{
   position: absolute;
   top: 20px;
@@ -174,50 +83,7 @@ a:hover {
   'GRAD' 0,
   'opsz' 24
 }
-
-
-
-
-/*.login-header {*/
-/*  font-size: 28px;*/
-/*  font-weight: 700;*/
-/*  margin-bottom: 40px;*/
-/*  margin-top: 10px;*/
-/*}*/
-
-/*.form-group {*/
-/*  margin-bottom: 30px;*/
-/*}*/
-
-/*.form-group label {*/
-/*  display: block;*/
-/*  font-size: 16px;*/
-/*  font-weight: 600;*/
-/*  margin-bottom: 5px;*/
-/*}*/
-
-/*.form-group input {*/
-/*  width: 100%;*/
-/*  padding: 10px;*/
-/*  font-size: 16px;*/
-/*  border: 1px solid #212529;*/
-/*}*/
-
-/*.btn-primary {*/
-/*  width: 100%;*/
-/*  padding: 14px;*/
-/*  background-color: #212529;*/
-/*  color: #ffffff;*/
-/*  border: none;*/
-/*  cursor: pointer;*/
-/*  transition: background-color 0.4s;*/
-/*  font-size: 18px;*/
-/*  font-weight: 600;*/
-/*}*/
-
-/*.btn-primary:hover {*/
-/*  background-color: #000000;*/
-/*}*/
+/*END NEW*/
 
 .login-form {
   font-family: var(--font-secondary);
@@ -401,7 +267,6 @@ section {
 
 .search-form-wrap .search-form .icon {
   position: absolute;
-  /*left: 0;*/
   top: 7px;
   opacity: 0.5;
   left: 10px;
@@ -436,11 +301,13 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
+/*NEW*/
 @media (min-width: 1280px) {
     .mobile-menu-items {
         display: none;
     }
 }
+/*END NEW*/
 @media (min-width: 1280px) {
   .navbar {
     padding: 0;
@@ -576,6 +443,7 @@ section {
   }
 }
 
+/*NEW*/
 /*block the Calendars, About, Logout in the nav bar*/
 .mobile {
   display: none;
@@ -587,6 +455,7 @@ section {
     display: block;
   }
 }
+/*END NEW*/
 
 
 @media (min-width: 1280px) and (max-width: 1366px) {
@@ -606,6 +475,8 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
+
+/*NEW*/
 @media (max-width: 1279px) {
   .menu-button {
     display: none;
@@ -613,16 +484,13 @@ section {
 }
 
 @media (max-width: 1279px) {
-    .mobile-menu-items {
-        display: block;
-        list-style: none;
-        padding: 0;
-    }
-
-    .mobile-menu-items li {
-        padding: 10px 20px;
-    }
+  .myItemsPanel{
+    display: block;
+  }
 }
+/*END NEW*/
+
+
 @media (max-width: 1279px) {
   .navbar {
     padding: 0;
@@ -711,7 +579,7 @@ section {
   }
 }
 
-
+/*NEW*/
 .menu-button {
   border: 1px solid #212529;
   padding: 8px 16px;
@@ -724,23 +592,20 @@ section {
 .menu-panel {
   position: fixed;
   top: 0;
-  right: -100vw;
+  right: -100vw; /* Initially hidden */
   width: 300px;
   height: 100vh;
   background: #ffffff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   transition: right 0.6s ease;
-  z-index: 9999;
+  z-index: 1000; /* Make sure the panel is above the overlay */
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-
-
-
 .menu-panel.open {
-  right: 0;
+  right: 0; /* Right in, run when the js function called*/
 }
 
 .menu-overlay {
@@ -749,16 +614,16 @@ section {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden; /* Initially hidden */
   transition: opacity 0.4s ease, visibility 0.4s;
-  z-index: 9998;
+  z-index: 999; /* Under the panel */
 }
 
 .menu-overlay.open {
   opacity: 1;
-  visibility: visible;
+  visibility: visible; /*run when the js function called*/
 }
 
 .menu-content {
@@ -777,6 +642,7 @@ section {
 .menu-content a:hover {
   color: #000000;
 }
+/*END NEW*/
 
 /*--------------------------------------------------------------
 # Posts
@@ -819,7 +685,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*justify-content: flex-start;*/
     flex: 1;
 }
 
@@ -944,8 +809,6 @@ section {
 .post-entry-2 .thumbnail {
     flex: 0 0 65%;
     display: flex;
-    /*justify-content: center;*/
-    /*align-items: center;*/
 }
 
 .post-entry-2 .thumbnail img {
@@ -953,13 +816,14 @@ section {
     height: auto;
 }
 
+/* NEW */
 .post-entry-2 .content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*justify-content: flex-start;*/
     flex: 1;
 }
+/* END NEW */
 
 .post-entry-2 .post-meta {
     font-size: 13px; /* MOD 11px -> 13px */
@@ -1083,7 +947,6 @@ section {
 .custom-swiper-button-next span,
 .custom-swiper-button-prev span {
   font-size: 20px;
-  /* color: rgba(var(--color-white-rgb), 0.7); */
   color: rgba(var(--color-black-rgb), 0.7);  /* NEW */
   transition: 0.3s all ease;
 }
@@ -1092,7 +955,6 @@ section {
 .custom-swiper-button-next:focus span,
 .custom-swiper-button-prev:hover span,
 .custom-swiper-button-prev:focus span {
-  /* color: rgba(var(--color-white-rgb), 1); */
   color: rgba(var(--color-black-rgb), 1);  /* NEW */
 }
 
@@ -1105,12 +967,10 @@ section {
 }
 
 .swiper-pagination .swiper-pagination-bullet {
-  /* background-color: rgba(var(--color-white-rgb), 0.8); */
   background-color: rgba(var(--color-black-rgb), 0.8);  /* NEW */
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-  /* background-color: rgba(var(--color-white-rgb), 1); */
   background-color: rgba(var(--color-black-rgb), 1);  /* NEW */
 }
 
@@ -1124,16 +984,6 @@ section {
   display: inline-block;
   padding-bottom: 5px;
 }
-
-/* .more:before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--color-black);
-} */
 
 .post-content {
   padding-left: 10%;
@@ -1157,16 +1007,6 @@ section {
   color: rgba(var(--color-black-rgb), 0.4);
   margin-bottom: 72px;
 }
-
-/* .post-content .firstcharacter {
-  float: left;
-  font-family: Georgia;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-left: 3px;
-} */
 
 .post-content figure {
   position: relative;
@@ -1308,7 +1148,6 @@ section {
 .aside-block .custom-tab-nav .nav-item button.active {
   background-color: transparent !important;
   color: var(--color-black);
-  /* border-bottom: 2px solid var(--color-black); */
 }
 
 .link-video {

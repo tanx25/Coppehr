@@ -182,3 +182,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+/*NEW*/
+document.addEventListener('DOMContentLoaded', () => {
+
+  const myItemsButton = document.getElementById('myItemsButton');
+  const myItemsPanel = document.getElementById('myItemsPanel');
+  const closeMenuButton = document.getElementById('closeMenuButton');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  if (myItemsButton && myItemsPanel && closeMenuButton && menuOverlay) {
+    // Show the My Items panel
+    myItemsButton.addEventListener('click', () => {
+      myItemsPanel.classList.add('open');
+      menuOverlay.classList.add('open');
+    });
+
+    // Hide the My Items panel
+    closeMenuButton.addEventListener('click', closeMenuPanel);
+    menuOverlay.addEventListener('click', closeMenuPanel);
+
+    function closeMenuPanel() {
+      myItemsPanel.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    }
+  } else {
+    console.error("My Items panel error.");
+  }
+});
