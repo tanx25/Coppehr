@@ -1,9 +1,9 @@
-{% extends 'wellness/base.html' %}
+{% extends 'coppehr/base.html' %}
 
 {% load static %}
 
 {% block title %}
-<title>Support | Resources | Wellness</title>
+<title>Support | Resources | COPPEhR</title>
 {% endblock title %}
 
 {% block content %}
@@ -12,7 +12,7 @@
   <div class="container">
     <div class="section-header d-flex justify-content-between align-items-center mb-5">
       <h2>Support</h2>
-      <div><a href="{% url 'wellness:support-events' %}" class="more">Events</a></div>
+      <div><a href="{% url 'coppehr:support-events' %}" class="more">Events</a></div>
     </div>
     <div class="row">
       <div class="col-md-9" data-aos="fade-up">
@@ -26,7 +26,7 @@
             <div class="post-meta"><span class="date">{{support_f.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{support_f.series_title}}</span></div>
             <h3><a>{{support_f.title}}</a></h3>
             <p>{{support_f.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:resource-detail' support_f.id %}">Read more</a>
+            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' support_f.id %}">Read more</a>
           </div>
         </div>
         {% else %}
@@ -45,7 +45,7 @@
               <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span> <span>{{r.series_title}}</span></div>
               <h2><a>{{r.title}}</a></h2>
               <p class="mb-4 d-block">{{r.description | truncatewords:44}}</p>
-              <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:resource-detail' r.id %}"><b>Read more</b></a>
+              <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
             </div>
           {% if forloop.counter == 3 or forloop.last %}
           </div>
@@ -88,7 +88,7 @@
                 <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{r.series_title}}</span></div>
                 <h2 class="mb-2"><a href="#">{{r.title}}</a></h2>
                 <p>{{r.description | truncatewords:44}}</p>
-                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'wellness:resource-detail' r.id %}"><b>Read more</b></a>
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
               </div>
               {% endfor %}
               {% endif %}
