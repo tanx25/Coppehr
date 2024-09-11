@@ -155,15 +155,28 @@ a:hover {
 /*  font-family: 'Inter', sans-serif;*/
 /*}*/
 
-/*.close-button {*/
-/*  position: absolute;*/
-/*  top: 20px;*/
-/*  right: 20px;*/
-/*  background: none;*/
-/*  border: none;*/
-/*  font-size: 24px;*/
-/*  cursor: pointer;*/
-/*}*/
+
+
+
+
+.close-button{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
 
 /*.login-header {*/
 /*  font-size: 28px;*/
