@@ -21,25 +21,28 @@
 :root {
 
   /* Fonts */
-  --font-default: 'EB Garamond', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: 'EB Garamond', serif; /*'Playfair Display', serif;*/
+  /*--font-default: 'EB Garamond', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
+  /*--font-primary: 'EB Garamond', serif; !*'Playfair Display', serif;*!*/
+
+  --font-default:'Inter', sans-serif;
+  --font-primary:'Inter', sans-serif;
   --font-secondary: 'Inter', sans-serif;
 
   /* Colors */
   /* The *-rgb color names are simply the RGB converted value of the corresponding color for use in the rgba() function */
 
   /* Default text color */
-  --color-default: #212529;
+  --color-default: #202020;
   --color-default-rgb: 33, 37, 41;
 
   /* Defult links color */
   --color-links: #212529;
-  --color-links-hover: #15171a;
+  --color-links-hover: #202020;
 
   /* Primay colors */
   --color-primary: #212529;
   --color-primary-light: #26282c;
-  --color-primary-dark: #0b0c0e;
+  --color-primary-dark: #202020;
 
   --color-primary-rgb: 33, 37, 41;
   --color-primary-light-rgb: 38, 40, 44;
@@ -91,8 +94,8 @@
   --color-gray: #6c757d;
   --color-gray-rgb: 108, 117, 125;
 
-  --color-black: #000000;
-  --color-black-rgb: 0, 0, 0;
+  --color-black: #202020;
+  --color-black-rgb: 32, 32, 32;
 }
 
 /*--------------------------------------------------------------

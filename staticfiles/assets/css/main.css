@@ -32,20 +32,26 @@ body {
 /*NEW*/
 /*Changing background color*/
 .home-page {
-  background-color: #fcf6f4;
+  background-color: #fcf5f3;
 }
 .friendship-page {
   background-color: #f4c4bc;
 }
 .health-page {
-  background-color: #dfe4e4;
+  background-color: #e0e4e4;
 }
 .support-page {
-  background-color: #bfe6e0;
+  background-color: #bfd5e1;
 }
 .contact-page {
   background-color: #ffe8c6;
 }
+
+/*h1, h2, h3, h4, h5, h6, p, a, span {*/
+/*  color: var(--color-default); */
+/*}*/
+
+
 /*END NEW*/
 
 
@@ -209,11 +215,17 @@ section {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
+/*NEW*/
 .header {
+  position:static;
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: #f2f2f2;
+  background: transparent;
+  border-bottom: 1px solid #202020;
+  padding: 0 20px;
+
 }
 
 .header.sticked {
@@ -313,6 +325,7 @@ section {
 @media (min-width: 1280px) {
   .navbar {
     padding: 0;
+    background: transparent; /*NEW*/
   }
 
   .navbar ul {
@@ -322,6 +335,11 @@ section {
     list-style: none;
     align-items: center;
   }
+
+  .navbar li:hover {
+    text-decoration: underline; /*NEW*/
+  }
+
 
   .navbar li {
     position: relative;
@@ -634,16 +652,34 @@ section {
 
 .menu-content a {
   display: block;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   color: #212529;
   margin-bottom: 20px;
   text-decoration: none;
 }
 
+.menu-content .top-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.menu-content .bottom-link {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 550px;
+  padding-bottom: 20px;
+}
+
 .menu-content a:hover {
   color: #000000;
 }
+
+
 /*END NEW*/
 
 /*--------------------------------------------------------------
@@ -1489,7 +1525,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   overflow: hidden;
-  background: rgba(var(--color-black-rgb), 0.9);
+  background: #202020; /* rgba(var(--color-black-rgb), 0.9) -> #202020 */
   font-size: 18px;  /* MOD 16px -> 18px */
   color: rgba(var(--color-white-rgb), 0.7);
 }

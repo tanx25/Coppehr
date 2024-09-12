@@ -11,6 +11,7 @@
   <!-- Favicons -->
   <link href="{% static 'assets/images/site/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/images/site/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <!-- NEW -->
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,9 +70,13 @@
   <div id="myItemsPanel" class="menu-panel">
     <button id="closeMenuButton" class="close-button">&times;</button>
     <div class="menu-content">
+        <div class="top-links">
         <a href="{% url 'coppehr:calendar' %}">Calendars</a>
         <a href="{% url 'coppehr:about' %}">About</a>
+        </div>
+        <div class="bottom-link">
         <a href="{% url 'coppehr:logout' %}">Logout</a>
+        </div>
     </div>
   </div>
   <div id="menuOverlay" class="menu-overlay"></div>
