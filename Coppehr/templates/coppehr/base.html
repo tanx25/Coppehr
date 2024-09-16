@@ -39,9 +39,9 @@
       <!-- Navbar -->
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="{% url 'coppehr:health-events' %}">Health</a></li>
-                <li><a href="{% url 'coppehr:friendship-events' %}">Friendship</a></li>
-                <li><a href="{% url 'coppehr:support-events' %}">Support</a></li>
+                <li><a href="{% url 'coppehr:health-events' %}" data-page="health">Health</a></li>
+                <li><a href="{% url 'coppehr:friendship-events' %}" data-page="friendship">Friendship</a></li>
+                <li><a href="{% url 'coppehr:support-events' %}" data-page="support">Support</a></li>
                 <!-- NEW -->
                 <li class="mobile"><a href="{% url 'coppehr:calendar' %}">Calendars</a></li>
                 <li class="mobile"><a href="{% url 'coppehr:about' %}">About</a></li>
@@ -49,7 +49,7 @@
             </ul>
         </nav>
         <!-- My Items Button -->
-        <button id="myItemsButton" class="menu-button">MY ITEMS</button>
+        <button id="myItemsButton" class="btn btn-outline-dark menu-button">MY ITEMS</button>
         <!-- Mobile Nav Toggle -->
         <div class="mobile-nav">
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -129,6 +129,23 @@
   <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
+
+<script>
+
+const navLinks = document.querySelectorAll('.navbar li a');
+const currentPath = window.location.pathname;
+
+console.log(currentPath);
+
+navLinks.forEach(link => {
+  if (currentPath.includes(link.getAttribute('data-page'))) {
+    link.classList.add('active');
+  }
+});
+
+</script>
+
+
 
 
 

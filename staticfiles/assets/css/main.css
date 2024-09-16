@@ -44,7 +44,7 @@ body {
   background-color: #bfd5e1;
 }
 .contact-page {
-  background-color: #ffe8c6;
+  background-color: #fcf5f3;
 }
 
 /*h1, h2, h3, h4, h5, h6, p, a, span {*/
@@ -80,7 +80,7 @@ a:hover {
   right: 20px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 32px;
   cursor: pointer;
 
   font-variation-settings:
@@ -123,6 +123,47 @@ a:hover {
   font-size: 20px;
   font-weight: 600;
 }
+/*--------------------------------------------------------------
+# Home Page Text Header
+--------------------------------------------------------------*/
+/*NEW*/
+.text-header-section {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.text-header-main {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-header-sub {
+    font-size: 4rem;
+    font-weight: lighter;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.text-header-title {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.text-header-description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 30px 0;
+}
+
+.text-header-button {
+    border: 1px solid #202020;
+    padding: 10px 20px;
+    font-weight: bold;
+  margin-bottom: 30px;
+}
+/*END NEW*/
 
 
 /*--------------------------------------------------------------
@@ -150,6 +191,7 @@ section {
 .col-md-9  h2 {
   font-size: 40px;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -223,7 +265,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   background: transparent;
-  border-bottom: 1px solid #202020;
+  border-bottom: 1px solid rgba(32, 32, 32, 0.2); /*NEW*/
   padding: 0 20px;
 
 }
@@ -336,10 +378,22 @@ section {
     align-items: center;
   }
 
-  .navbar li:hover {
-    text-decoration: underline; /*NEW*/
+  /*NEW*/
+  .navbar li a {
+    font-weight: 400;
   }
 
+ .navbar li a:hover{
+   font-size: 40px;
+   font-weight: 500;
+
+ }
+
+.navbar li a.active {
+   font-size: 40px;
+   font-weight: 500;
+}
+ /*END NEW*/
 
   .navbar li {
     position: relative;
@@ -358,6 +412,7 @@ section {
     white-space: nowrap;
     transition: 0.3s;
   }
+
 
   /* NEW */
   .navbar > li:first-child > a,
@@ -652,8 +707,8 @@ section {
 
 .menu-content a {
   display: block;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 300;
   color: #212529;
   margin-bottom: 20px;
   text-decoration: none;
@@ -663,7 +718,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
   gap: 20px;
 }
 
@@ -671,12 +726,13 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 550px;
+  margin-top: 250px;
   padding-bottom: 20px;
 }
 
 .menu-content a:hover {
-  color: #000000;
+  font-weight: 600;
+
 }
 
 
