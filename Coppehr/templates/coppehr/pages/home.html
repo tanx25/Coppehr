@@ -12,29 +12,26 @@
 
 <!-- ======= NEW ======= -->
 <!-- ======= TEXT PART ======= -->
-<div>
 <div class="container-lg text-header-section" data-aos="fade-in">
-    <div class="row align-items-center">
-        <div class="col-12 col-md-6 text-left">
+    <div class="row justify-content-left text-left">
+        <div class="col-12 col-md-6">
             <h1 class="text-header-main">HEALTH TIP</h1>
             <p class="text-header-sub">of the</p>
             <h1 class="text-header-main">DAY</h1>
         </div>
 
-        <div class="col-12 col-md-6 text-center">
-            <h2 class="text-header-title">Sleep</h2>
-            <p class="text-header-description">
-                This week's topic is sleep. Be consistent. Go to bed at the same time each night and get up at the same time each morning, including on the weekends.
-            </p>
-            <a href="{% url 'coppehr:about' %}" class="btn btn-outline-dark text-header-button">Read more</a>
+        <div class="col-12 col-md-6">
+            {% if health_tips %}
+                <h2 class="text-header-title">{{ health_tips.title }}</h2>
+                <p class="text-header-description">
+                    {{ health_tips.text }}
+                </p>
+                <a href="{% url 'coppehr:about' %}" class="btn btn-outline-dark text-header-button">Read more</a>
+            {% else %}
+                <h2 class="text-header-description">No Health Tips Available</h2>
+            {% endif %}
         </div>
     </div>
-
-    <div class="row align-items-center text-arrow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"  fill="currentColor" class="bi bi-chevron-double-down text-center" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"></path>
-                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"></path>
-    </svg>
 </div>
 
 

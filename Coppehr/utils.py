@@ -1,5 +1,5 @@
 from datetime import date, timedelta
-from .models import Announcement, Event, Resource, PostStatus, PostCategory
+from .models import Announcement, Event, Resource, PostStatus, PostCategory, HealthTip
 
 
 def _get_date_for_monday_of_this_week():
@@ -90,3 +90,13 @@ def get_resources(category):
         .filter(status=PostStatus.PUBLISHED) \
         .order_by('updated_on', 'release_date', 'created_on')
     return resources
+
+
+def get_health_tips():
+    health_tips = HealthTip.objects \
+        .filter(status=PostStatus.PUBLISHED) \
+        .filter(release_date__lte=date.today()) \
+        .filter(expiration_date__gte=date.today()) \
+        .order_by('expiration_date') \
+        .first()
+    return health_tips

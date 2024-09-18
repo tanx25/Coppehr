@@ -5,9 +5,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date
 
 from .forms import UserLoginForm
-from .models import Event, Resource, PostStatus, PostCategory
+from .models import Event, Resource, PostStatus, PostCategory, HealthTip
 from .utils import (get_announcements, get_home_page_events, get_events,
-                    get_upcoming_events, get_resources, get_calendar_events)
+                    get_upcoming_events, get_resources, get_calendar_events, get_health_tips)
 
 MAX_EVENTS_PER_PAGE = 3
 MAX_RESOURCES_PER_PAGE = 6
@@ -43,6 +43,7 @@ def user_logout(request):
 @login_required(login_url='coppehr:login')
 def home(request):
     announcements = get_announcements()
+    health_tips = get_health_tips()
     health_f, health_o = get_home_page_events(PostCategory.HEALTH)
     friendship_f, friendship_o = get_home_page_events(PostCategory.FRIENDSHIP)
     support_f, support_o = get_home_page_events(PostCategory.SUPPORT)
@@ -53,7 +54,8 @@ def home(request):
         'friendship_f': friendship_f,
         'friendship_o': friendship_o,
         'support_f': support_f,
-        'support_o': support_o
+        'support_o': support_o,
+        'health_tips': health_tips
     })
 
 
