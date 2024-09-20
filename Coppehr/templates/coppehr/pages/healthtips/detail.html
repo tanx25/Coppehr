@@ -1,0 +1,35 @@
+{% extends 'coppehr/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Health Tips | Detail | Wellness</title>
+{% endblock title%}
+
+{% block content %}
+<section class="single-post-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 post-content" data-aos="fade-up">
+        <div class="single-post">
+          <div class="post-meta">
+            <span class="date">Health Tips</span>
+            <span class="mx-1">&bullet;</span>
+            <span>{{healthtips.title}}</span>
+          </div>
+            <figure class="my-4">
+                <img src="{% static 'assets/images/event/lsc-series-2-session-2-24-08-12.jpg/'%}" class="img-fluid">
+                <figcaption>{{ event.art_caption }}</figcaption>
+            </figure>
+          <div class="mb-5"></div>
+          <p class="description">{{healthtips.text}}</p>
+          <div class="d-grid gap-2 col-8 mx-auto mt-2">
+            <a class="location btn btn-primary" href="{{healthtips.venue.url | safe}}" target="_blank">Visit website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom: 150px;"></div>
+  </div>
+</section>
+{% endblock content%}

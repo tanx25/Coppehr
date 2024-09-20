@@ -12,31 +12,31 @@ def _format_release_date(date):
     return date.strftime('%B %d')
 
 
-def get_announcements():
-    announcements = Announcement.objects \
-        .filter(status=PostStatus.PUBLISHED) \
-        .filter(release_date__lte=date.today()) \
-        .filter(expiration_date__gte=date.today()) \
-        .order_by('expiration_date')
-    return announcements
+def get_announcements(category):
+    return Announcement.objects.filter(
+        category=category,
+        status=PostStatus.PUBLISHED,
+        release_date__lte=date.today(),
+        expiration_date__gte=date.today()
+    ).order_by('expiration_date')
 
 
 def get_home_page_events(category):
     monday_this_week = _get_date_for_monday_of_this_week()
-    events = Event.objects \
-        .filter(category=category) \
-        .filter(status=PostStatus.PUBLISHED) \
-        .filter(release_date__gte=monday_this_week) \
-        .filter(date__gte=date.today()) \
-        .exclude(title__istartswith='This Week of') \
-        .order_by('date')
+    events = (Event.objects
+              .filter(category=category)
+              .filter(status=PostStatus.PUBLISHED)
+              .filter(release_date__gte=monday_this_week) # release date should be after or on Monday of current week
+              .filter(date__gte=date.today()) # Date should be after or on today's date
+              .exclude(title__istartswith='This Week of')
+              .order_by('date'))
     featured = None
     others = []
     if events.exists():
         featured = events.first()
         if events.count() > 1:
             others = events[1:4]
-    return (featured, others)
+    return featured, others
 
 
 def get_calendar_events():

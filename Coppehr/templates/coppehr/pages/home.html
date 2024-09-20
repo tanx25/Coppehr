@@ -10,6 +10,7 @@
     <body class="home-page">
 
 
+
 <!-- ======= NEW ======= -->
 <!-- ======= TEXT PART ======= -->
 <div class="container-lg text-header-section" data-aos="fade-in">
@@ -24,16 +25,15 @@
             {% if health_tips %}
                 <h2 class="text-header-title">{{ health_tips.title }}</h2>
                 <p class="text-header-description">
-                    {{ health_tips.text }}
+                    {{ health_tips.text | truncatewords:10 }}
                 </p>
-                <a href="{% url 'coppehr:about' %}" class="btn btn-outline-dark text-header-button">Read more</a>
+                <a href="{% url 'coppehr:htips-detail' health_tips.id %}" class="btn btn-outline-dark text-header-button">Read more</a>
             {% else %}
                 <h2 class="text-header-description">No Health Tips Available</h2>
             {% endif %}
         </div>
     </div>
 </div>
-
 
     <!-- =======END NEW ======= -->
 
@@ -51,7 +51,7 @@
         {% if health_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-            <img src="{% static 'assets/images/event/' %} {{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid">
+            <img src="{% static 'assets/images/event/'%}{{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid">
           </a>
           <div class="content">
             <div class="post-meta">
@@ -62,7 +62,7 @@
               <span>{{health_f.date | date:"M d"}}</span>
             </div>
             <h3><a>{{health_f.title}}</a></h3>
-            <p>{{health_f.description | truncatewords:44}}</p>
+            <p>{{health_f.description | truncatewords:10}}</p>
             <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' health_f.id %}">Read more</a>
           </div>
         </div>
@@ -152,12 +152,9 @@
       <div class="col-md-9">
         {% if support_f %}
         <div class="d-lg-flex post-entry-2">
-
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-
             <img src="{% static 'assets/images/event/ '%}{{support_f.art_uri}}.jpg" alt="{{support_f.art_alt}}" class="img-fluid">
           </a>
-
           <div class="content">
             <div class="post-meta">
               <span class="date">{{support_f.get_category_display}}</span>
@@ -197,3 +194,4 @@
 </section><!-- End Support Category Section -->
 {% endblock content %}
 </body>
+

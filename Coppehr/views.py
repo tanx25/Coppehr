@@ -42,13 +42,11 @@ def user_logout(request):
 
 @login_required(login_url='coppehr:login')
 def home(request):
-    announcements = get_announcements()
     health_tips = get_health_tips()
     health_f, health_o = get_home_page_events(PostCategory.HEALTH)
     friendship_f, friendship_o = get_home_page_events(PostCategory.FRIENDSHIP)
     support_f, support_o = get_home_page_events(PostCategory.SUPPORT)
     return render(request, 'coppehr/pages/home.html', {
-        'announcements': announcements,
         'health_f': health_f,
         'health_o': health_o,
         'friendship_f': friendship_f,
@@ -70,6 +68,11 @@ def event_detail(request, event_id):
 def resource_detail(request, resource_id):
     resource = get_object_or_404(Resource, pk=resource_id)
     return render(request, 'coppehr/pages/resources/detail.html', {'resource': resource})
+
+@login_required(login_url='coppehr:login')
+def healthtips_detail(request, healthtips_id):
+    healthtips = get_object_or_404(HealthTip, pk=healthtips_id)
+    return render(request, 'coppehr/pages/healthtips/detail.html', {'healthtips': healthtips})
 
 
 @login_required(login_url='coppehr:login')
@@ -95,15 +98,16 @@ def about(request):
 
 @login_required(login_url='coppehr:login')
 def health_events(request):
+    announcements_h = get_announcements(PostCategory.HEALTH)
     upcoming_e = get_upcoming_events(PostCategory.HEALTH)
-    events = get_events(PostCategory.HEALTH).filter(
-        status=PostStatus.PUBLISHED,
-        date__gte=date.today()
-    )
+    events = get_events(PostCategory.HEALTH)
     paginator = Paginator(events, MAX_EVENTS_PER_PAGE)
     page_number = request.GET.get('page', 1)
     health_e = paginator.page(page_number)
-    return render(request, 'coppehr/pages/events/health.html', {'health_e': health_e, 'upcoming_e': upcoming_e})
+    return render(request, 'coppehr/pages/events/health.html', {
+        'announcements_h': announcements_h,
+        'health_e': health_e,
+        'upcoming_e': upcoming_e})
 
 
 @login_required(login_url='coppehr:login')
@@ -123,15 +127,16 @@ def health_resources(request):
 
 @login_required(login_url='coppehr:login')
 def friendship_events(request):
+    announcements_f = get_announcements(PostCategory.FRIENDSHIP)
     upcoming_e = get_upcoming_events(PostCategory.FRIENDSHIP)
-    events = get_events(PostCategory.FRIENDSHIP).filter(
-        status=PostStatus.PUBLISHED,
-        date__gte=date.today()
-    )
+    events = get_events(PostCategory.FRIENDSHIP)
     paginator = Paginator(events, MAX_EVENTS_PER_PAGE)
     page_number = request.GET.get('page', 1)
     friendship_e = paginator.page(page_number)
-    return render(request, 'coppehr/pages/events/friendship.html', {'friendship_e': friendship_e, 'upcoming_e': upcoming_e})
+    return render(request, 'coppehr/pages/events/friendship.html', {
+        'announcements_f': announcements_f,
+        'friendship_e': friendship_e,
+        'upcoming_e': upcoming_e})
 
 
 @login_required(login_url='coppehr:login')
@@ -151,20 +156,21 @@ def friendship_resources(request):
 
 @login_required(login_url='coppehr:login')
 def support_events(request):
+    announcements_s = get_announcements(PostCategory.SUPPORT)
     upcoming_e = get_upcoming_events(PostCategory.SUPPORT)
-    events = get_events(PostCategory.SUPPORT).filter(
-        status=PostStatus.PUBLISHED,
-        date__gte=date.today()
-    )
+    events = get_events(PostCategory.SUPPORT)
     paginator = Paginator(events, MAX_EVENTS_PER_PAGE)
     page_number = request.GET.get('page', 1)
     support_e = paginator.page(page_number)
-    return render(request, 'coppehr/pages/events/support.html', {'support_e': support_e, 'upcoming_e': upcoming_e})
+    return render(request, 'coppehr/pages/events/support.html', {
+        'announcements_s': announcements_s,
+        'support_e': support_e,
+        'upcoming_e': upcoming_e})
 
 
 @login_required(login_url='coppehr:login')
 def support_resources(request):
-    resources = get_resources(PostCategory.SUPPORT).filter(status=PostStatus.PUBLISHED)
+    resources = get_resources(PostCategory.SUPPORT)
     support_f = resources.order_by('?').first()
     latest_r = list(resources.order_by('-release_date')[:LATEST_RESOURCES_COUNT])
     paginator = Paginator(resources, MAX_RESOURCES_PER_PAGE)

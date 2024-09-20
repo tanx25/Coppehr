@@ -23,7 +23,7 @@
             <img src="{% static 'assets/images/resource/' %}{{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid">
           </a>
           <div>
-            <div class="post-meta"><span class="date">{{health_f.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{health_f.series_title}}</span></div>
+            <div class="post-meta"><span class="date">{{health_f.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span><span>{{health_f.series_title}}{% endif %}</span></div>
             <h3><a>{{health_f.title}}</a></h3>
             <p>{{health_f.description | truncatewords:44}}</p>
             <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' health_f.id %}">Read more</a>
@@ -32,6 +32,7 @@
         {% else %}
         <h3>Sorry, no resources have been posted in this category as of today.</h3>
         {% endif %}
+
         <div class="row">
           {% if health_r %}
           {% for r in health_r %}
@@ -42,7 +43,7 @@
           <div class="col-md-6">
           {% endif %}
             <div class="post-entry-1">
-              <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span> <span>{{r.series_title}}</span></div>
+              <div class="post-meta"><span class="date">{{r.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span> <span>{{r.series_title}}{% endif %}</span></div>
               <h2><a>{{r.title}}</a></h2>
               <p class="mb-4 d-block">{{r.description | truncatewords:44}}</p>
               <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
@@ -85,7 +86,7 @@
               {% if latest_r %}
               {% for r in latest_r %}
               <div class="post-entry-1 border-bottom">
-                <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{r.series_title}}</span></div>
+                <div class="post-meta"><span class="date">{{r.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span><span>{{r.series_title}}{% endif %}</span></div>
                 <h2 class="mb-2"><a href="#">{{r.title}}</a></h2>
                 <p>{{r.description | truncatewords:44}}</p>
                 <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>

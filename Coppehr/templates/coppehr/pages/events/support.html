@@ -14,7 +14,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="swiper sliderFeaturedPosts">
-          {% include 'coppehr/pages/includes/swiper_wrapper.html' with announcements=announcements %}
+          {% include 'coppehr/pages/includes/swiper_wrapper.html' with announcements=announcements_s %}
           <div style="margin-top: 50px;"></div>
           <div class="swiper-pagination"></div>
         </div>
@@ -36,7 +36,7 @@
         {% for e in support_e %}
         <div class="d-md-flex post-entry-2 half">
           <a class="me-4 thumbnail">
-            <img src="{% static 'assets/images/event/' %}{{e.art_uri}}.jpg" alt="{{e.art_alt}}" class="img-fluid">
+            <img src="{% static 'assets/images/event/'%}{{e.art_uri}}.jpg" alt="{{e.art_alt}}" class="img-fluid">
           </a>
           <div class="content">
             <div class="post-meta">

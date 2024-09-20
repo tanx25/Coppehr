@@ -23,7 +23,7 @@
             <img src="{% static 'assets/images/resource/' %}{{friendship_f.art_uri}}.jpg" alt="{{friendship_f.art_alt}}" class="img-fluid">
           </a>
           <div>
-            <div class="post-meta"><span class="date">{{friendship_f.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{friendship_f.series_title}}</span></div>
+            <div class="post-meta"><span class="date">{{friendship_f.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span><span>{{friendship_f.series_title}}{% endif %}</span></div>
             <h3><a>{{friendship_f.title}}</a></h3>
             <p>{{friendship_f.description | truncatewords:44}}</p>
             <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' friendship_f.id %}">Read more</a>
@@ -42,7 +42,7 @@
           <div class="col-md-6">
           {% endif %}
             <div class="post-entry-1">
-              <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span> <span>{{r.series_title}}</span></div>
+              <div class="post-meta"><span class="date">{{r.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span> <span>{{r.series_title}}{% endif %}</span></div>
               <h2><a>{{r.title}}</a></h2>
               <p class="mb-4 d-block">{{r.description | truncatewords:44}}</p>
               <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
@@ -85,7 +85,7 @@
               {% if latest_r %}
               {% for r in latest_r %}
               <div class="post-entry-1 border-bottom">
-                <div class="post-meta"><span class="date">{{r.get_category_display}}</span><span class="mx-1">&bullet;</span><span>{{r.series_title}}</span></div>
+                <div class="post-meta"><span class="date">{{r.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span><span>{{r.series_title}}{% endif %}</span></div>
                 <h2 class="mb-2"><a href="#">{{r.title}}</a></h2>
                 <p>{{r.description | truncatewords:44}}</p>
                 <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
