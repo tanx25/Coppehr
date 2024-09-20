@@ -34,6 +34,7 @@ class Venue(models.Model):
 class HealthTip(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
+    venue = models.ForeignKey(Venue, on_delete=models.RESTRICT,blank=True,null=True,)
     release_date = models.DateField(
         help_text='Monday of the week when health tip is released')
     expiration_date = models.DateField()

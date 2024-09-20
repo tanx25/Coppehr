@@ -922,8 +922,14 @@ section {
 .post-entry-2 .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.post-entry-2 .content-button {
+    margin-top: 100px;
+    width: 90%;
 }
 /* END NEW */
 
@@ -939,10 +945,10 @@ section {
 
 /* NEW */
 .post-entry-2 .read-more-btn {
-    margin-top: auto;
+    margin-top: 100px;
     align-self: flex-start;
     width: 100%;
-    max-width: 100%;
+    max-width: 90%;
     box-sizing: border-box;
     position: relative;
     bottom: 0;
@@ -976,6 +982,14 @@ section {
     flex: 0 0 100%;
     margin-bottom: 20px;
   }
+}
+/*NEW*/
+.img-limited-size {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: 400px;
+    object-fit: cover;
 }
 
 .img-bg {

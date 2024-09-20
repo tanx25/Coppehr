@@ -69,6 +69,7 @@ def resource_detail(request, resource_id):
     resource = get_object_or_404(Resource, pk=resource_id)
     return render(request, 'coppehr/pages/resources/detail.html', {'resource': resource})
 
+
 @login_required(login_url='coppehr:login')
 def healthtips_detail(request, healthtips_id):
     healthtips = get_object_or_404(HealthTip, pk=healthtips_id)
@@ -181,5 +182,3 @@ def support_resources(request):
         'support_r': support_r,
         'latest_r': latest_r
     })
-
-

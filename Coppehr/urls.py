@@ -11,6 +11,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('event/<int:event_id>/', views.event_detail, name='event-detail'),
     path('resource/<int:resource_id>/', views.resource_detail, name='resource-detail'),
+    path('htips/<int:healthtips_id>/', views.healthtips_detail, name='htips-detail'),
     path('health-events/', views.health_events, name='health-events'),
     path('friendship-events/', views.friendship_events, name='friendship-events'),
     path('support-events/', views.support_events, name='support-events'),
