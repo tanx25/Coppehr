@@ -51,9 +51,9 @@
         {% if health_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-            <img src="{% static 'assets/images/event/'%}{{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid">
+            <img src="{% static 'assets/images/event/'%}{{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid img-limited-size">
           </a>
-          <div class="content">
+          <div class="content align-top">
             <div class="post-meta">
               <span class="date">{{health_f.get_category_display}}</span>
               <span class="mx-1">&bullet;</span>
@@ -63,7 +63,10 @@
             </div>
             <h3><a>{{health_f.title}}</a></h3>
             <p>{{health_f.description | truncatewords:10}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' health_f.id %}">Read more</a>
+              <div class="content-button">
+                  <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' health_f.id %}">Read more</a>
+              </div>
+
           </div>
         </div>
         {% else %}
@@ -81,8 +84,10 @@
             <span>{{e.date | date:"M d"}}</span>
           </div>
           <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-          <p>{{e.description | truncatewords:44}}</p>
-          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+          <p>{{e.description | truncatewords:10}}</p>
+            <div class="content-button">
+                <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+            </div>
         </div>
         {% endfor %}
       </div> <!-- End .col-md-3 -->
@@ -102,7 +107,7 @@
         {% if friendship_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
-            <img src="{% static 'assets/images/event/' %}{{friendship_f.art_uri}}.jpg" alt="{{friendship_f.art_alt}}" class="img-fluid">
+            <img src="{% static 'assets/images/event/' %}{{friendship_f.art_uri}}.jpg" alt="{{friendship_f.art_alt}}" class="img-fluid img-limited-size">
           </a>
           <div class="content">
             <div class="post-meta">
@@ -113,8 +118,10 @@
               <span>{{friendship_f.date | date:"M d"}}</span>
             </div>
             <h3><a>{{friendship_f.title}}</a></h3>
-            <p>{{friendship_f.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' friendship_f.id %}">Read more</a>
+            <p>{{friendship_f.description | truncatewords:10}}</p>
+              <div class="content-button">
+                  <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' friendship_f.id %}">Read more</a>
+              </div>
           </div>
         </div>
         {% else %}
@@ -132,8 +139,10 @@
             <span>{{e.date | date:"M d"}}</span>
           </div>
           <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-          <p>{{e.description | truncatewords:44}}</p>
-          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+          <p>{{e.description | truncatewords:10}}</p>
+            <div class="content-button">
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+            </div>
         </div>
         {% endfor %}
       </div><!-- End .col-md-3 -->
@@ -153,7 +162,7 @@
         {% if support_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-            <img src="{% static 'assets/images/event/ '%}{{support_f.art_uri}}.jpg" alt="{{support_f.art_alt}}" class="img-fluid">
+            <img src="{% static 'assets/images/event/ '%}{{support_f.art_uri}}.jpg" alt="{{support_f.art_alt}}" class="img-fluid img-limited-size">
           </a>
           <div class="content">
             <div class="post-meta">
@@ -164,8 +173,10 @@
               <span>{{support_f.date | date:"M d"}}</span>
             </div>
             <h3><a>{{support_f.title}}</a></h3>
-            <p>{{support_f.description | truncatewords:44}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' support_f.id %}">Read more</a>
+            <p>{{support_f.description | truncatewords:10}}</p>
+              <div class="content-button">
+                  <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' support_f.id %}">Read more</a>
+              </div>
           </div>
         </div>
 
@@ -184,8 +195,10 @@
             <span>{{e.date | date:"M d"}}</span>
           </div>
           <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-          <p>{{e.description | truncatewords:44}}</p>
-          <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+          <p>{{e.description | truncatewords:10}}</p>
+            <div class="content-button">
+                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+            </div>
         </div>
         {% endfor %}
       </div><!-- End .col-md-3 -->
