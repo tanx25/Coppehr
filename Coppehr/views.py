@@ -175,3 +175,5 @@ def support_resources(request):
         'support_r': support_r,
         'latest_r': latest_r
     })
+
+
