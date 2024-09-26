@@ -25,9 +25,9 @@ def get_home_page_events(category):
     monday_this_week = _get_date_for_monday_of_this_week()
     events = (Event.objects
               .filter(category=category)
-              .filter(status=PostStatus.PUBLISHED)
-              .filter(release_date__gte=monday_this_week) # release date should be after or on Monday of current week
-              .filter(date__gte=date.today()) # Date should be after or on today's date
+              # .filter(status=PostStatus.PUBLISHED)
+              # .filter(release_date__gte=monday_this_week)  # release date should be after or on Monday of current week
+              # .filter(date__gte=date.today())  # Date should be after or on today's date
               .exclude(title__istartswith='This Week of')
               .order_by('date'))
     featured = None
@@ -65,9 +65,9 @@ def get_events(category):
     monday_this_week = _get_date_for_monday_of_this_week()
     events = Event.objects \
         .filter(category=category) \
-        .filter(status=PostStatus.PUBLISHED) \
-        .filter(release_date__gte=monday_this_week) \
-        .order_by('date')
+        # .filter(status=PostStatus.PUBLISHED) \
+        # .filter(release_date__gte=monday_this_week) \
+        # .order_by('date')
     return events
 
 
