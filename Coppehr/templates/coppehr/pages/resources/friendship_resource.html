@@ -83,12 +83,14 @@
             <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
               {% if latest_r %}
               {% for r in latest_r %}
-              <div class="post-entry-1 border-bottom">
-                <div class="post-meta"><span class="date">{{r.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span><span>{{r.series_title}}{% endif %}</span></div>
-                <h2 class="mb-2"><a href="#">{{r.title}}</a></h2>
-                <p>{{r.description | truncatewords:44}}</p>
-                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
-              </div>
+                  {% if forloop.counter <= 3 %}
+                  <div class="post-entry-1 border-bottom">
+                      <div class="post-meta"><span class="date">{{r.get_category_display}}</span>{% if r.series_title %}<span class="mx-1">&bullet;</span><span>{{r.series_title}}{% endif %}</span></div>
+                      <h2 class="mb-2"><a href="#">{{r.title}}</a></h2>
+                      <p>{{r.description | truncatewords:44}}</p>
+                      <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:resource-detail' r.id %}"><b>Read more</b></a>
+                  </div>
+                  {% endif %}
               {% endfor %}
               {% endif %}
             </div>

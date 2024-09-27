@@ -113,7 +113,7 @@ def health_events(request):
 
 @login_required(login_url='coppehr:login')
 def health_resources(request):
-    resources = get_resources(PostCategory.HEALTH).filter(status=PostStatus.PUBLISHED)
+    resources = get_resources(PostCategory.HEALTH)
     health_f = resources.order_by('?').first()
     latest_r = list(resources.order_by('-release_date')[:LATEST_RESOURCES_COUNT])
     paginator = Paginator(resources, MAX_RESOURCES_PER_PAGE)
@@ -142,7 +142,7 @@ def friendship_events(request):
 
 @login_required(login_url='coppehr:login')
 def friendship_resources(request):
-    resources = get_resources(PostCategory.FRIENDSHIP).filter(status=PostStatus.PUBLISHED)
+    resources = get_resources(PostCategory.FRIENDSHIP)
     friendship_f = resources.order_by('?').first()
     latest_r = list(resources.order_by('-release_date')[:LATEST_RESOURCES_COUNT])
     paginator = Paginator(resources, MAX_RESOURCES_PER_PAGE)

@@ -84,18 +84,20 @@
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
               {% for e in upcoming_e %}
-              <div class="post-entry-1 border-bottom">
-                <div class="post-meta">
-                  <span class="date">{{e.get_category_display}}</span>
-                  <span class="mx-1">&bullet;</span>
-                  <span>{{e.series_title}}</span>
-                  <span class="mx-1">&bullet;</span>
-                  <span>{{e.date | date:"M d"}}</span>
-                </div>
-                <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-                <p>{{e.description | truncatewords:44}}</p>
-                <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
-              </div>
+                  {% if forloop.counter <= 3 %}
+                  <div class="post-entry-1 border-bottom">
+                      <div class="post-meta">
+                          <span class="date">{{e.get_category_display}}</span>
+                          <span class="mx-1">&bullet;</span>
+                          <span>{{e.series_title}}</span>
+                          <span class="mx-1">&bullet;</span>
+                          <span>{{e.date | date:"M d"}}</span>
+                      </div>
+                      <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
+                      <p>{{e.description | truncatewords:44}}</p>
+                      <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
+                  </div>
+                  {% endif %}
               {% endfor %}
             </div>
           </div>

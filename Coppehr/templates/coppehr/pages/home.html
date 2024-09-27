@@ -16,8 +16,8 @@
 <div class="container-lg text-header-section" data-aos="fade-in">
     <div class="row align-items-start text-left">
         <div class="col-12 col-md-6">
-            <h1 class="text-header-main">HEALTH TIP</h1>
-            <p class="text-header-sub">of the <span class="text-header-main">DAY</span></p>
+            <h1 class="text-header-main">HEALTH  TIP</h1>
+            <p class="text-header-sub">of the  <span class="text-header-main">DAY</span></p>
         </div>
 
         <div class="col-12 col-md-6">
@@ -28,7 +28,7 @@
                 </p>
                 <a href="{% url 'coppehr:htips-detail' health_tips.id %}" class="btn btn-outline-dark text-header-button">Read more</a>
             {% else %}
-                <h2 class="text-header-description">No Health Tips Available</h2>
+                <p class="text-header-no-health-tips">No Health Tips Available</p>
             {% endif %}
         </div>
     </div>
@@ -46,7 +46,6 @@
       <div class="mt-auto"><a href="{% url 'coppehr:health-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
-{#      <div class="col-md-9">#}
         {% if health_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
@@ -71,6 +70,7 @@
         <h3>Sorry, it appears that no events are scheduled in this category as of today.</h3>
         {% endif %}
       </div> <!-- End .col-md-9 -->
+
 {#        <div class="col-md-3">#}
 {#            {% for e in health_o %}#}
 {#                <div class="post-entry-1 border-bottom">#}
@@ -87,9 +87,7 @@
 {#                </div>#}
 {#            {% endfor %}#}
 {#        </div> <!-- End .col-md-3 -->#}
-
     </div> <!-- End .row -->
-{#  </div>#}
 </section> <!-- End Health Category Section -->
 
 <!-- ======= Friendship Category Section ======= -->
@@ -100,7 +98,6 @@
       <div class="mt-auto"><a href="{% url 'coppehr:friendship-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
-      <div class="col-md-9">
         {% if friendship_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
@@ -126,7 +123,7 @@
         {% endif %}
       </div><!-- End .col-md-9 -->
 
-      <div class="col-md-3">
+{#      <div class="col-md-3">#}
 {#        {% for e in friendship_o %}#}
 {#        <div class="post-entry-1 border-bottom">#}
 {#          <div class="post-meta">#}
@@ -141,9 +138,8 @@
 {#            <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>#}
 {#        </div>#}
 {#        {% endfor %}#}
-      </div><!-- End .col-md-3 -->
+{#      </div><!-- End .col-md-3 -->#}
     </div><!-- End .row -->
-  </div>
 </section><!-- End Friendship Category Section -->
 
 <!-- ======= Support Category Section ======= -->
@@ -154,7 +150,6 @@
       <div class="mt-auto"><a href="{% url 'coppehr:support-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
-      <div class="col-md-9">
         {% if support_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
@@ -180,7 +175,7 @@
         <h3>Sorry, it appears that no events are scheduled in this category as of today.</h3>
         {% endif %}
       </div> <!-- End .col-md-9 -->
-      <div class="col-md-3">
+{#      <div class="col-md-3">#}
 {#        {% for e in support_o %}#}
 {#        <div class="post-entry-1 border-bottom">#}
 {#          <div class="post-meta">#}
@@ -195,9 +190,8 @@
 {#            <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>#}
 {#        </div>#}
 {#        {% endfor %}#}
-      </div><!-- End .col-md-3 -->
+{#      </div><!-- End .col-md-3 -->#}
     </div><!-- End .row -->
-  </div>
 </section><!-- End Support Category Section -->
 {% endblock content %}
 </body>
