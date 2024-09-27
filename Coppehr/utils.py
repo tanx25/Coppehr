@@ -73,24 +73,23 @@ def get_events(category):
 
 def get_upcoming_events(category):
     MIN_WEEKS_AHEAD = 1
-    MAX_WEEKS_AHEAD = 10
+    MAX_WEEKS_AHEAD = 4
     monday_this_week = _get_date_for_monday_of_this_week()
     events = Event.objects \
         .filter(category=category) \
-        .filter(status=PostStatus.PUBLISHED) \
-        .filter(release_date__gte=monday_this_week + timedelta(weeks=MIN_WEEKS_AHEAD)) \
-        .filter(release_date__lte=monday_this_week + timedelta(weeks=MAX_WEEKS_AHEAD)) \
-        .order_by('date')
+        # .filter(status=PostStatus.PUBLISHED) \
+        # .filter(release_date__gte=monday_this_week + timedelta(weeks=MIN_WEEKS_AHEAD)) \
+        # .filter(release_date__lte=monday_this_week + timedelta(weeks=MAX_WEEKS_AHEAD)) \
+        # .order_by('date')
     return events
 
 
 def get_resources(category):
     resources = Resource.objects \
         .filter(category=category) \
-        .filter(status=PostStatus.PUBLISHED) \
-        .order_by('updated_on', 'release_date', 'created_on')
+        # .filter(status=PostStatus.PUBLISHED) \
+        # .order_by('updated_on', 'release_date', 'created_on')
     return resources
-
 
 def get_health_tips():
     health_tips = HealthTip.objects \

@@ -22,9 +22,9 @@
 
         <div class="col-12 col-md-6">
             {% if health_tips %}
-                <h2 class="text-header-title">{{ health_tips.title }}</h2>
+                <h3>{{ health_tips.title }}</h3>
                 <p class="text-header-description">
-                    {{ health_tips.text | truncatewords:10 }}
+                    {{ health_tips.text | truncatewords:12 }}
                 </p>
                 <a href="{% url 'coppehr:htips-detail' health_tips.id %}" class="btn btn-outline-dark text-header-button">Read more</a>
             {% else %}
@@ -46,13 +46,13 @@
       <div class="mt-auto"><a href="{% url 'coppehr:health-events' %}" class="more">See All</a></div>
     </div>
     <div class="row">
-      <div class="col-md-9">
+{#      <div class="col-md-9">#}
         {% if health_f %}
         <div class="d-lg-flex post-entry-2">
           <a class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
             <img src="{% static 'assets/images/event/'%}{{health_f.art_uri}}.jpg" alt="{{health_f.art_alt}}" class="img-fluid img-limited-size">
           </a>
-          <div class="content align-top">
+          <div class="content">
             <div class="post-meta">
               <span class="date">{{health_f.get_category_display}}</span>
               <span class="mx-1">&bullet;</span>
@@ -60,8 +60,8 @@
               <span class="mx-1">&bullet;</span>
               <span>{{health_f.date | date:"M d"}}</span>
             </div>
-            <h3><a>{{health_f.title}}</a></h3>
-            <p>{{health_f.description | truncatewords:10}}</p>
+            <h3>{{health_f.title}}</h3>
+            <p>{{health_f.description | truncatewords:12}}</p>
               <div class="content-button">
                   <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' health_f.id %}">Read more</a>
               </div>
@@ -71,24 +71,25 @@
         <h3>Sorry, it appears that no events are scheduled in this category as of today.</h3>
         {% endif %}
       </div> <!-- End .col-md-9 -->
-      <div class="col-md-3">
-        {% for e in health_o %}
-        <div class="post-entry-1 border-bottom">
-          <div class="post-meta">
-            <span class="date">{{e.get_category_display}}</span>
-            <span class="mx-1">&bullet;</span>
-            <span>{{e.series_title}}</span>
-            <span class="mx-1">&bullet;</span>
-            <span>{{e.date | date:"M d"}}</span>
-          </div>
-          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-          <p>{{e.description | truncatewords:10}}</p>
-            <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
-        </div>
-        {% endfor %}
-      </div> <!-- End .col-md-3 -->
+{#        <div class="col-md-3">#}
+{#            {% for e in health_o %}#}
+{#                <div class="post-entry-1 border-bottom">#}
+{#                    <div class="post-meta">#}
+{#                        <span class="date">{{e.get_category_display}}</span>#}
+{#                        <span class="mx-1">&bullet;</span>#}
+{#                        <span>{{e.series_title}}</span>#}
+{#                        <span class="mx-1">&bullet;</span>#}
+{#                        <span>{{e.date | date:"M d"}}</span>#}
+{#                    </div>#}
+{#                    <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>#}
+{#                    <p>{{e.description | truncatewords:10}}</p>#}
+{#                    <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div> <!-- End .col-md-3 -->#}
+
     </div> <!-- End .row -->
-  </div>
+{#  </div>#}
 </section> <!-- End Health Category Section -->
 
 <!-- ======= Friendship Category Section ======= -->
@@ -114,7 +115,7 @@
               <span>{{friendship_f.date | date:"M d"}}</span>
             </div>
             <h3><a>{{friendship_f.title}}</a></h3>
-            <p>{{friendship_f.description | truncatewords:10}}</p>
+            <p>{{friendship_f.description | truncatewords:12}}</p>
               <div class="content-button">
                   <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' friendship_f.id %}">Read more</a>
               </div>
@@ -126,20 +127,20 @@
       </div><!-- End .col-md-9 -->
 
       <div class="col-md-3">
-        {% for e in friendship_o %}
-        <div class="post-entry-1 border-bottom">
-          <div class="post-meta">
-            <span class="date">{{e.get_category_display}}</span>
-            <span class="mx-1">&bullet;</span>
-            <span>{{e.series_title}}</span>
-            <span class="mx-1">&bullet;</span>
-            <span>{{e.date | date:"M d"}}</span>
-          </div>
-          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-          <p>{{e.description | truncatewords:10}}</p>
-            <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
-        </div>
-        {% endfor %}
+{#        {% for e in friendship_o %}#}
+{#        <div class="post-entry-1 border-bottom">#}
+{#          <div class="post-meta">#}
+{#            <span class="date">{{e.get_category_display}}</span>#}
+{#            <span class="mx-1">&bullet;</span>#}
+{#            <span>{{e.series_title}}</span>#}
+{#            <span class="mx-1">&bullet;</span>#}
+{#            <span>{{e.date | date:"M d"}}</span>#}
+{#          </div>#}
+{#          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>#}
+{#          <p>{{e.description | truncatewords:10}}</p>#}
+{#            <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>#}
+{#        </div>#}
+{#        {% endfor %}#}
       </div><!-- End .col-md-3 -->
     </div><!-- End .row -->
   </div>
@@ -168,7 +169,7 @@
               <span>{{support_f.date | date:"M d"}}</span>
             </div>
             <h3><a>{{support_f.title}}</a></h3>
-            <p>{{support_f.description | truncatewords:10}}</p>
+            <p>{{support_f.description | truncatewords:12}}</p>
               <div class="content-button">
                   <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' support_f.id %}">Read more</a>
               </div>
@@ -180,20 +181,20 @@
         {% endif %}
       </div> <!-- End .col-md-9 -->
       <div class="col-md-3">
-        {% for e in support_o %}
-        <div class="post-entry-1 border-bottom">
-          <div class="post-meta">
-            <span class="date">{{e.get_category_display}}</span>
-            <span class="mx-1">&bullet;</span>
-            <span>{{e.series_title}}</span>
-            <span class="mx-1">&bullet;</span>
-            <span>{{e.date | date:"M d"}}</span>
-          </div>
-          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-          <p>{{e.description | truncatewords:10}}</p>
-            <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
-        </div>
-        {% endfor %}
+{#        {% for e in support_o %}#}
+{#        <div class="post-entry-1 border-bottom">#}
+{#          <div class="post-meta">#}
+{#            <span class="date">{{e.get_category_display}}</span>#}
+{#            <span class="mx-1">&bullet;</span>#}
+{#            <span>{{e.series_title}}</span>#}
+{#            <span class="mx-1">&bullet;</span>#}
+{#            <span>{{e.date | date:"M d"}}</span>#}
+{#          </div>#}
+{#          <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>#}
+{#          <p>{{e.description | truncatewords:10}}</p>#}
+{#            <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>#}
+{#        </div>#}
+{#        {% endfor %}#}
       </div><!-- End .col-md-3 -->
     </div><!-- End .row -->
   </div>
