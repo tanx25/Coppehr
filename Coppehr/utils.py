@@ -15,9 +15,9 @@ def _format_release_date(date):
 def get_announcements(category):
     return Announcement.objects.filter(
         category=category,
-        status=PostStatus.PUBLISHED,
-        release_date__lte=date.today(),
-        expiration_date__gte=date.today()
+        # status=PostStatus.PUBLISHED,
+        # release_date__lte=date.today(),
+        # expiration_date__gte=date.today()
     ).order_by('expiration_date')
 
 
@@ -49,9 +49,10 @@ def get_calendar_events():
     for w in weeks:
         rdate = _format_release_date(w)
         events = Event.objects \
-            .filter(release_date=w) \
-            .filter(status=PostStatus.PUBLISHED) \
-            .order_by('date', 'time')
+            .filter() \
+            # .filter(release_date=w) \
+            # .filter(status=PostStatus.PUBLISHED) \
+            # .order_by('date', 'time')
         groups = [events[i:i + EVENTS_PER_ROW]
                   for i in range(0, len(events), EVENTS_PER_ROW)]
         items.append({
@@ -93,8 +94,8 @@ def get_resources(category):
 
 def get_health_tips():
     health_tips = HealthTip.objects \
-        .filter(status=PostStatus.PUBLISHED) \
         .filter(release_date__lte=date.today()) \
+        .filter(status=PostStatus.PUBLISHED) \
         .filter(expiration_date__gte=date.today()) \
         .order_by('expiration_date') \
         .first()

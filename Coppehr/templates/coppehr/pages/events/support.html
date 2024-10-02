@@ -26,13 +26,13 @@
 
 <section>
   <div class="container">
-    <div class="section-header d-flex justify-content-between align-items-center mb-5">
-      <h2>Support</h2>
+    <div class="section-header d-flex align-items-center mb-5">
+      <h2>Events</h2>
       <div class="mt-auto"><a href="{% url 'coppehr:support-resources' %}" class="more">Resources</a></div>
     </div>
     <div class="row">
       <div class="col-md-9" data-aos="fade-up">
-        <h2>Events</h2>
+        <h2>Support</h2>
         {% for e in support_e %}
         <div class="d-md-flex post-entry-2 half">
           <a class="me-4 thumbnail">
@@ -40,8 +40,8 @@
           </a>
           <div class="content">
             <div class="post-meta">
-              <span class="date">{{e.get_category_display}}</span>
-              <span class="mx-1">&bullet;</span>
+{#              <span class="date">{{e.get_category_display}}</span>#}
+{#              <span class="mx-1">&bullet;</span>#}
               <span>{{e.series_title}}</span>
               <span class="mx-1">&bullet;</span>
               <span>{{e.date | date:"M d"}}</span>
@@ -87,8 +87,8 @@
                   {% if forloop.counter <= 3 %}
                   <div class="post-entry-1 border-bottom">
                       <div class="post-meta">
-                          <span class="date">{{e.get_category_display}}</span>
-                          <span class="mx-1">&bullet;</span>
+{#                          <span class="date">{{e.get_category_display}}</span>#}
+{#                          <span class="mx-1">&bullet;</span>#}
                           <span>{{e.series_title}}</span>
                           <span class="mx-1">&bullet;</span>
                           <span>{{e.date | date:"M d"}}</span>
