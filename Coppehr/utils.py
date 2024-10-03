@@ -51,8 +51,8 @@ def get_calendar_events():
         events = Event.objects \
             .filter() \
             # .filter(release_date=w) \
-            # .filter(status=PostStatus.PUBLISHED) \
-            # .order_by('date', 'time')
+        # .filter(status=PostStatus.PUBLISHED) \
+        # .order_by('date', 'time')
         groups = [events[i:i + EVENTS_PER_ROW]
                   for i in range(0, len(events), EVENTS_PER_ROW)]
         items.append({
@@ -66,9 +66,10 @@ def get_events(category):
     monday_this_week = _get_date_for_monday_of_this_week()
     events = Event.objects \
         .filter(category=category) \
-        # .filter(status=PostStatus.PUBLISHED) \
-        # .filter(release_date__gte=monday_this_week) \
-        # .order_by('date')
+        .order_by('date')
+    # .filter(status=PostStatus.PUBLISHED) \
+    # .filter(release_date__gte=monday_this_week) \
+
     return events
 
 
@@ -79,18 +80,21 @@ def get_upcoming_events(category):
     events = Event.objects \
         .filter(category=category) \
         # .filter(status=PostStatus.PUBLISHED) \
-        # .filter(release_date__gte=monday_this_week + timedelta(weeks=MIN_WEEKS_AHEAD)) \
-        # .filter(release_date__lte=monday_this_week + timedelta(weeks=MAX_WEEKS_AHEAD)) \
-        # .order_by('date')
+    # .filter(release_date__gte=monday_this_week + timedelta(weeks=MIN_WEEKS_AHEAD)) \
+    # .filter(release_date__lte=monday_this_week + timedelta(weeks=MAX_WEEKS_AHEAD)) \
+    # .order_by('date')
     return events
 
 
 def get_resources(category):
     resources = Resource.objects \
         .filter(category=category) \
-        # .filter(status=PostStatus.PUBLISHED) \
-        # .order_by('updated_on', 'release_date', 'created_on')
+        .order_by('-release_date')
+    # .filter(status=PostStatus.PUBLISHED) \
+    # .order_by('updated_on', 'release_date', 'created_on')
+
     return resources
+
 
 def get_health_tips():
     health_tips = HealthTip.objects \
