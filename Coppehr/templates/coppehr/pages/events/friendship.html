@@ -47,7 +47,7 @@
               <span>{{e.date | date:"M d"}}</span>
             </div>
             <h3><a>{{e.title}}</a></h3>
-            <p>{{e.description | truncatewords:44}}</p>
+            <p>{{e.description | truncatewords:32}}</p>
             <a class="d-grid gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
           </div>
         </div>
@@ -94,7 +94,7 @@
                           <span>{{e.date | date:"M d"}}</span>
                       </div>
                       <h2 class="mb-2"><a href="#">{{e.title}}</a></h2>
-                      <p>{{e.description | truncatewords:44}}</p>
+                      <p>{{e.description | truncatewords:32}}</p>
                       <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
                   </div>
                   {% endif %}

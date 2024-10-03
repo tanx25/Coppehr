@@ -31,7 +31,7 @@
                   <span>{{e.series_title}}</span>
               </div>
               <h2>{{e.title}}</h2>
-              <p class="mb-4 d-block">{{e.description | truncatewords:44}}</p>
+              <p class="mb-4 d-block">{{e.description | truncatewords:32}}</p>
               <a class="gap-2 col-12 mx-auto mt-2 btn btn-primary" href="{% url 'coppehr:event-detail' e.id %}"><b>Read more</b></a>
           </div>
       </div>
